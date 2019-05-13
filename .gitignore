@@ -14,9 +14,9 @@ package.json
 
 phpunit.xml.dist
 
-tests/bootstrap.php
+tests/
 
-tests/test-sample.php
+bin/
 
 .phpcs.xml.dist
 
