@@ -62,7 +62,7 @@ while ( have_posts() ) : the_post();
          <!-- Plaforms --> 
          <?php
             $parameters = array(
-                'sectionTitle'    => "Plaforms",
+                'sectionTitle'    => "Platforms",
              );
              
              $args = array(

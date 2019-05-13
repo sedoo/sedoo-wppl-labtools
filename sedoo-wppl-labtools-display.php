@@ -89,14 +89,6 @@ function sedoo_theme_labo_is_template( $template_path ){
  * ADD TEMPLATE THEME FOR PAGES
  */
 
-/*
-Plugin Name: Page Template Plugin : 'Good To Be Bad'
-Plugin URI: http://www.wpexplorer.com/wordpress-page-templates-plugin/
-Version: 1.1.0
-Author: WPExplorer
-Author URI: http://www.wpexplorer.com/
-*/
-
 class PageTemplater {
 
 	/**

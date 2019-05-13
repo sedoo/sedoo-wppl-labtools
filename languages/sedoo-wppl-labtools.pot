@@ -1,0 +1,695 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sedoo Outils Lab\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-13 16:02+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.2; wp-5.2"
+
+#: taxonomies/sedooPlatformTag.php:45
+msgid "&larr; Back to Platform Tags"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:45
+msgid "&larr; Back to Research Team Tags"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:45
+msgid "&larr; Back to Themes"
+msgstr ""
+
+#: post-types/sedoo-platform.php:24 post-types/sedoo-research-team.php:24
+msgid "Add New"
+msgstr ""
+
+#: post-types/sedoo-platform.php:25
+msgid "Add New Platform"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:34
+msgid "Add New Platform Tag"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:25
+msgid "Add New Research team"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:34
+msgid "Add New Research Team Tag"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:34
+msgid "Add New Theme"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:37
+msgid "Add or remove Platform Tags"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:37
+msgid "Add or remove Research Team Tags"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:37
+msgid "Add or remove Themes"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:28
+msgid "All Platform Tags"
+msgstr ""
+
+#: post-types/sedoo-platform.php:11
+msgid "All Platforms"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:28
+msgid "All Research Team Tags"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:11
+msgid "All Research teams"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:28
+msgid "All Themes"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:38
+msgid "Choose from the most used Platform Tags"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:38
+msgid "Choose from the most used Research Team Tags"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:38
+msgid "Choose from the most used Themes"
+msgstr ""
+
+#: post-types/sedoo-platform.php:70 post-types/sedoo-research-team.php:70
+msgid "Custom field deleted."
+msgstr ""
+
+#: post-types/sedoo-platform.php:69 post-types/sedoo-research-team.php:69
+msgid "Custom field updated."
+msgstr ""
+
+#. Description of the plugin
+msgid "custom post pour les laboratoires"
+msgstr ""
+
+#: post-types/sedoo-platform.php:26
+msgid "Edit Platform"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:31
+msgid "Edit Platform Tag"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:26
+msgid "Edit Research team"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:31
+msgid "Edit Research Team Tag"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:31
+msgid "Edit Theme"
+msgstr ""
+
+#: post-types/sedoo-platform.php:20
+msgid "Filter Platforms list"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:20
+msgid "Filter Research teams list"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/sedoo/sedoo-wppl-labtools"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.sedoo.fr"
+msgstr ""
+
+#: post-types/sedoo-platform.php:14
+msgid "Insert into Platform"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:14
+msgid "Insert into Research team"
+msgstr ""
+
+#: post-types/sedoo-platform.php:81 post-types/sedoo-research-team.php:81
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: taxonomy-sedoo-theme-labo.php:75
+msgid "More information about "
+msgstr ""
+
+#: post-types/sedoo-platform.php:23
+msgid "New Platform"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:35
+msgid "New Platform Tag"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:23
+msgid "New Research team"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:35
+msgid "New Research Team Tag"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:35
+msgid "New Theme"
+msgstr ""
+
+#: template-theme.php:31
+msgid "News"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:40
+msgid "No Platform Tags"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:39
+msgid "No Platform Tags found."
+msgstr ""
+
+#: post-types/sedoo-platform.php:30
+msgid "No Platforms found"
+msgstr ""
+
+#: post-types/sedoo-platform.php:31
+msgid "No Platforms found in trash"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:40
+msgid "No Research Team Tags"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:39
+msgid "No Research Team Tags found."
+msgstr ""
+
+#: post-types/sedoo-research-team.php:30
+msgid "No Research teams found"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:31
+msgid "No Research teams found in trash"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:40
+msgid "No Themes"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:39
+msgid "No Themes found."
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:29
+msgid "Parent Platform Tag"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:30
+msgid "Parent Platform Tag:"
+msgstr ""
+
+#: post-types/sedoo-platform.php:32
+msgid "Parent Platform:"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:29
+msgid "Parent Research Team Tag"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:30
+msgid "Parent Research Team Tag:"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:32
+msgid "Parent Research team:"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:29
+msgid "Parent Theme"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:30
+msgid "Parent Theme:"
+msgstr ""
+
+#. Author of the plugin
+msgid "Pierre VERT - SEDOO DATA CENTER"
+msgstr ""
+
+#: post-types/sedoo-platform.php:10
+msgid "Platform"
+msgstr ""
+
+#: post-types/sedoo-platform.php:12
+msgid "Platform Archives"
+msgstr ""
+
+#: post-types/sedoo-platform.php:13
+msgid "Platform Attributes"
+msgstr ""
+
+#. %s: post permalink
+#: post-types/sedoo-platform.php:83
+#, php-format
+msgid ""
+"Platform draft updated. <a target=\"_blank\" href=\"%s\">Preview Platform</a>"
+msgstr ""
+
+#. %s: post permalink
+#: post-types/sedoo-platform.php:75
+#, php-format
+msgid "Platform published. <a href=\"%s\">View Platform</a>"
+msgstr ""
+
+#. %s: date and time of the revision
+#: post-types/sedoo-platform.php:73
+#, php-format
+msgid "Platform restored to revision from %s"
+msgstr ""
+
+#: post-types/sedoo-platform.php:76
+msgid "Platform saved."
+msgstr ""
+
+#. 1: Publish box date format, see https://secure.php.net/date 2: Post permalink
+#: post-types/sedoo-platform.php:80
+#, php-format
+msgid ""
+"Platform scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
+"href=\"%2$s\">Preview Platform</a>"
+msgstr ""
+
+#. %s: post permalink
+#: post-types/sedoo-platform.php:78
+#, php-format
+msgid ""
+"Platform submitted. <a target=\"_blank\" href=\"%s\">Preview Platform</a>"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:65
+msgid "Platform Tag added."
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:66
+msgid "Platform Tag deleted."
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:68
+msgid "Platform Tag not added."
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:69
+msgid "Platform Tag not updated."
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:67
+msgid "Platform Tag updated."
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:24 taxonomies/sedooPlatformTag.php:41
+msgid "Platform Tags"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:70
+msgid "Platform Tags deleted."
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:43
+msgid "Platform Tags list"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:42
+msgid "Platform Tags list navigation"
+msgstr ""
+
+#: post-types/sedoo-platform.php:71
+msgid "Platform updated."
+msgstr ""
+
+#. %s: post permalink
+#: post-types/sedoo-platform.php:68
+#, php-format
+msgid "Platform updated. <a target=\"_blank\" href=\"%s\">View Platform</a>"
+msgstr ""
+
+#: post-types/sedoo-platform.php:9 post-types/sedoo-platform.php:33
+msgid "Platforms"
+msgstr ""
+
+#: post-types/sedoo-platform.php:22
+msgid "Platforms list"
+msgstr ""
+
+#: post-types/sedoo-platform.php:21
+msgid "Platforms list navigation"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:27
+msgid "Popular Platform Tags"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:27
+msgid "Popular Research Team Tags"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:27
+msgid "Popular Themes"
+msgstr ""
+
+#: template-theme.php:33
+msgid "Products"
+msgstr ""
+
+#: template-theme.php:34
+msgid "Regional Animation Networks"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:10
+msgid "Research team"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:12
+msgid "Research team Archives"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:13
+msgid "Research team Attributes"
+msgstr ""
+
+#. %s: post permalink
+#: post-types/sedoo-research-team.php:83
+#, php-format
+msgid ""
+"Research team draft updated. <a target=\"_blank\" href=\"%s\">Preview "
+"Research team</a>"
+msgstr ""
+
+#. %s: post permalink
+#: post-types/sedoo-research-team.php:75
+#, php-format
+msgid "Research team published. <a href=\"%s\">View Research team</a>"
+msgstr ""
+
+#. %s: date and time of the revision
+#: post-types/sedoo-research-team.php:73
+#, php-format
+msgid "Research team restored to revision from %s"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:76
+msgid "Research team saved."
+msgstr ""
+
+#. 1: Publish box date format, see https://secure.php.net/date 2: Post permalink
+#: post-types/sedoo-research-team.php:80
+#, php-format
+msgid ""
+"Research team scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
+"href=\"%2$s\">Preview Research team</a>"
+msgstr ""
+
+#. %s: post permalink
+#: post-types/sedoo-research-team.php:78
+#, php-format
+msgid ""
+"Research team submitted. <a target=\"_blank\" href=\"%s\">Preview Research "
+"team</a>"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:65
+msgid "Research Team Tag added."
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:66
+msgid "Research Team Tag deleted."
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:68
+msgid "Research Team Tag not added."
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:69
+msgid "Research Team Tag not updated."
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:67
+msgid "Research Team Tag updated."
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:24
+#: taxonomies/sedooResearchTeamTag.php:41
+msgid "Research Team Tags"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:70
+msgid "Research Team Tags deleted."
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:43
+msgid "Research Team Tags list"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:42
+msgid "Research Team Tags list navigation"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:71
+msgid "Research team updated."
+msgstr ""
+
+#. %s: post permalink
+#: post-types/sedoo-research-team.php:68
+#, php-format
+msgid ""
+"Research team updated. <a target=\"_blank\" href=\"%s\">View Research "
+"team</a>"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:9 post-types/sedoo-research-team.php:33
+msgid "Research teams"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:22
+msgid "Research teams list"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:21
+msgid "Research teams list navigation"
+msgstr ""
+
+#: template-theme.php:32
+msgid "Scientific Expertise Centres"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:26
+msgid "Search Platform Tags"
+msgstr ""
+
+#: post-types/sedoo-platform.php:29
+msgid "Search Platforms"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:26
+msgid "Search Research Team Tags"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:29
+msgid "Search Research teams"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:26
+msgid "Search Themes"
+msgstr ""
+
+#. Name of the plugin
+msgid "Sedoo Outils Lab"
+msgstr ""
+
+#: post-types/sedoo-platform.php:16
+msgctxt "sedoo-platform"
+msgid "Featured Image"
+msgstr ""
+
+#: post-types/sedoo-platform.php:18
+msgctxt "sedoo-platform"
+msgid "Remove featured image"
+msgstr ""
+
+#: post-types/sedoo-platform.php:17
+msgctxt "sedoo-platform"
+msgid "Set featured image"
+msgstr ""
+
+#: post-types/sedoo-platform.php:19
+msgctxt "sedoo-platform"
+msgid "Use as featured image"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:44
+msgctxt "sedoo-platform-tag"
+msgid "Most Used"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:16
+msgctxt "sedoo-research-team"
+msgid "Featured Image"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:18
+msgctxt "sedoo-research-team"
+msgid "Remove featured image"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:17
+msgctxt "sedoo-research-team"
+msgid "Set featured image"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:19
+msgctxt "sedoo-research-team"
+msgid "Use as featured image"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:44
+msgctxt "sedoo-research-team-tag"
+msgid "Most Used"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:44
+msgctxt "sedoo-theme-labo"
+msgid "Most Used"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:36
+msgid "Separate Platform Tags with commas"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:36
+msgid "Separate Research Team Tags with commas"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:36
+msgid "Separate Themes with commas"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:25
+msgctxt "taxonomy general name"
+msgid "Platform Tag"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:25
+msgctxt "taxonomy general name"
+msgid "Research Team Tag"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:25
+msgctxt "taxonomy general name"
+msgid "Theme"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:65
+msgid "Theme added."
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:66
+msgid "Theme deleted."
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:68
+msgid "Theme not added."
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:69
+msgid "Theme not updated."
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:67
+msgid "Theme updated."
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:24 taxonomies/sedoo-theme-labo.php:41
+msgid "Themes"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:70
+msgid "Themes deleted."
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:43
+msgid "Themes list"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:42
+msgid "Themes list navigation"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:32
+msgid "Update Platform Tag"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:32
+msgid "Update Research Team Tag"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:32
+msgid "Update Theme"
+msgstr ""
+
+#: post-types/sedoo-platform.php:15
+msgid "Uploaded to this Platform"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:15
+msgid "Uploaded to this Research team"
+msgstr ""
+
+#: post-types/sedoo-platform.php:27
+msgid "View Platform"
+msgstr ""
+
+#: taxonomies/sedooPlatformTag.php:33
+msgid "View Platform Tag"
+msgstr ""
+
+#: post-types/sedoo-platform.php:28
+msgid "View Platforms"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:27
+msgid "View Research team"
+msgstr ""
+
+#: taxonomies/sedooResearchTeamTag.php:33
+msgid "View Research Team Tag"
+msgstr ""
+
+#: post-types/sedoo-research-team.php:28
+msgid "View Research teams"
+msgstr ""
+
+#: taxonomies/sedoo-theme-labo.php:33
+msgid "View Theme"
+msgstr ""

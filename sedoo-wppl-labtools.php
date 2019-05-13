@@ -17,16 +17,19 @@
 * LOAD TEXT DOMAIN FOR TEXT TRANSLATIONS
 */
 
-function sedoo_labtools_load_plugin_textdomain() {
-    $domain = 'sedoo-wppl-labtools';
-    $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
-    // wp-content/languages/plugin-name/plugin-name-fr_FR.mo
-    load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
-    // wp-content/plugins/plugin-name/languages/plugin-name-fr_FR.mo
-    load_plugin_textdomain( $domain, FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+// function sedoo_labtools_load_plugin_textdomain() {
+//     $domain = 'sedoo-wppl-labtools';
+//     $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+//     // wp-content/languages/plugin-name/plugin-name-fr_FR.mo
+//     load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
+//     // wp-content/plugins/plugin-name/languages/plugin-name-fr_FR.mo
+//     load_plugin_textdomain( $domain, FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
     
+// }
+function sedoo_labtools_load_plugin_textdomain() {
+    load_plugin_textdomain( 'sedoo-wppl-labtools', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 }
-add_action( 'init', 'sedoo_labtools_load_plugin_textdomain' );
+add_action( 'plugins_loaded', 'sedoo_labtools_load_plugin_textdomain' );
 
 // LOAD CSS & SCRIPTS 
 function sedoo_labtools_scripts() {

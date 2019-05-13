@@ -62,7 +62,7 @@ while ( have_posts() ) : the_post();
          <!-- Research Teams --> 
          <?php
             $parameters = array(
-                'sectionTitle'    => "Research Teams",
+                'sectionTitle'    => "Research teams",
              );
              
              $args = array(
