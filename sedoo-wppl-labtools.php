@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:     Outils Lab
+ * Plugin Name:     Sedoo Outils Lab
  * Plugin URI:      https://github.com/sedoo/sedoo-wppl-labtools
- * Description:     PLUGIN DESCRIPTION HERE
+ * Description:     custom post pour les laboratoires
  * Author:          Pierre VERT - SEDOO DATA CENTER
  * Author URI:      https://www.sedoo.fr 
  * Text Domain:     sedoo-wppl-labtools
@@ -28,21 +28,21 @@ function sedoo_labtools_load_plugin_textdomain() {
 }
 add_action( 'init', 'sedoo_labtools_load_plugin_textdomain' );
 
-/***
- * Ajout de l'excerpt pour les pages
- */
+// LOAD CSS & SCRIPTS 
+function sedoo_labtools_scripts() {
+    wp_register_style( 'prefix-style', plugins_url('css/sedoo_labtools.css', __FILE__) );
+    wp_enqueue_style( 'prefix-style' );
+}
+add_action('wp_enqueue_scripts','sedoo_labtools_scripts');
 
-add_post_type_support( 'page', 'excerpt' );
 
-/***
- * Ajout du support des thumbnails
- */
-add_theme_support( 'post-thumbnails' );
 
 include 'post-types/sedoo-platform.php';
 include 'post-types/sedoo-research-team.php';
 include 'taxonomies/sedoo-theme-labo.php';
-include 'inc/sedoo-wppl-labtools-display.php';
+include 'taxonomies/sedooPlatformTag.php';
+include 'taxonomies/sedooResearchTeamTag.php';
+include 'sedoo-wppl-labtools-display.php';
 include 'inc/sedoo-wppl-labtools-functions.php';
 
 

@@ -1,1 +1,0 @@
-<h1>single-sedoo-platform.php</h1>

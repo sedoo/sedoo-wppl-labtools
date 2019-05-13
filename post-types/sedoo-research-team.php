@@ -36,6 +36,7 @@ function sedoo_research_team_init() {
 		'hierarchical'          => false,
 		'show_ui'               => true,
 		'show_in_nav_menus'     => true,
+		'menu_position'         => 10,
 		'supports'              => array( 'title', 'editor','excerpt', 'thumbnail', 'revisions' ),
 		'has_archive'           => true,
 		'rewrite'               => true,

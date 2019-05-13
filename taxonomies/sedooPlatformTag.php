@@ -1,16 +1,17 @@
 <?php
 
 /**
- * Registers the `sedooPlatformTag` taxonomy,
+ * Registers the `sedoo-platform-tag` taxonomy,
  * for use with 'sedoo-platform'.
  */
-function sedooPlatformTag_init() {
-	register_taxonomy( 'sedooPlatformTag', array( 'post', 'sedoo-platform' ), array(
-		'hierarchical'      => false,
+function sedoo_platform_tag_init() {
+	register_taxonomy( 'sedoo-platform-tag', array( 'page', 'sedoo-platform' ), array(
+		'hierarchical'      => true,
 		'public'            => true,
 		'show_in_nav_menus' => true,
 		'show_ui'           => true,
-		'show_admin_column' => false,
+		'show_admin_column' => true,
+		'show_tagcloud'     => true,
 		'query_var'         => true,
 		'rewrite'           => true,
 		'capabilities'      => array(
@@ -40,26 +41,26 @@ function sedooPlatformTag_init() {
 			'menu_name'                  => __( 'Platform Tags', 'sedoo-wppl-labtools' ),
 			'items_list_navigation'      => __( 'Platform Tags list navigation', 'sedoo-wppl-labtools' ),
 			'items_list'                 => __( 'Platform Tags list', 'sedoo-wppl-labtools' ),
-			'most_used'                  => _x( 'Most Used', 'sedooPlatformTag', 'sedoo-wppl-labtools' ),
+			'most_used'                  => _x( 'Most Used', 'sedoo-platform-tag', 'sedoo-wppl-labtools' ),
 			'back_to_items'              => __( '&larr; Back to Platform Tags', 'sedoo-wppl-labtools' ),
 		),
 		'show_in_rest'      => true,
-		'rest_base'         => 'sedooPlatformTag',
+		'rest_base'         => 'sedoo-platform-tag',
 		'rest_controller_class' => 'WP_REST_Terms_Controller',
 	) );
-
+	register_taxonomy_for_object_type( 'sedoo-platform-tag', 'post' );
 }
-add_action( 'init', 'sedooPlatformTag_init' );
+add_action( 'init', 'sedoo_platform_tag_init' );
 
 /**
- * Sets the post updated messages for the `sedooPlatformTag` taxonomy.
+ * Sets the post updated messages for the `sedoo-platform-tag` taxonomy.
  *
  * @param  array $messages Post updated messages.
- * @return array Messages for the `sedooPlatformTag` taxonomy.
+ * @return array Messages for the `sedoo-platform-tag` taxonomy.
  */
-function sedooPlatformTag_updated_messages( $messages ) {
+function sedoo_platform_tag_updated_messages( $messages ) {
 
-	$messages['sedooPlatformTag'] = array(
+	$messages['sedoo-platform-tag'] = array(
 		0 => '', // Unused. Messages start at index 1.
 		1 => __( 'Platform Tag added.', 'sedoo-wppl-labtools' ),
 		2 => __( 'Platform Tag deleted.', 'sedoo-wppl-labtools' ),
@@ -71,4 +72,4 @@ function sedooPlatformTag_updated_messages( $messages ) {
 
 	return $messages;
 }
-add_filter( 'term_updated_messages', 'sedooPlatformTag_updated_messages' );
+add_filter( 'term_updated_messages', 'sedoo_platform_tag_updated_messages' );

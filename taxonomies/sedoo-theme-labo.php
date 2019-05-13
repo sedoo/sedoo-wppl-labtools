@@ -5,12 +5,13 @@
  * for use with 'pages', 'post', 'sedoo-platform', 'sedoo-research-team'.
  */
 function sedoo_theme_labo_init() {
-	register_taxonomy( 'sedoo-theme-labo', array( 'pages', 'post', 'sedoo-platform', 'sedoo-research-team' ), array(
-		'hierarchical'      => false,
+	register_taxonomy( 'sedoo-theme-labo', array( 'page', 'post', 'sedoo-platform', 'sedoo-research-team' ), array(
+		'hierarchical'      => true,
 		'public'            => true,
 		'show_in_nav_menus' => true,
 		'show_ui'           => true,
-		'show_admin_column' => false,
+		'show_admin_column' => true,
+		'show_tagcloud'     => true,
 		'query_var'         => true,
 		'rewrite'           => true,
 		'capabilities'      => array(

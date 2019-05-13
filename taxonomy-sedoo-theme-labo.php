@@ -1,5 +1,3 @@
-<h1>taxonomy-sedoo-theme-labo.php</h1>
-
 <?php
 /**
  * The template for displaying archive pages
@@ -24,7 +22,7 @@ $args = array(
 	// 'post__not_in'          => array($postID),    //exclu le post courant
 	'tax_query' => array(
 		array(
-			'taxonomy' => 'theme',
+			'taxonomy' => 'sedoo-theme-labo',
 			'field'    => 'slug',
 			'terms'    => $term->slug,
 		),
@@ -66,7 +64,7 @@ while ( $the_query->have_posts() ) {
 
 		<section role="theme-embed-page">
 			<?php
-			$tax_slug = get_query_var( 'theme' );
+			$tax_slug = get_query_var( 'sedoo-theme-labo' );
 			?>
 			<article  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<section>
@@ -105,7 +103,7 @@ while ( $the_query->have_posts() ) {
 			// 'post__not_in'          => array($postID),    //exclu le post courant
 			'tax_query' => array(
 				array(
-					'taxonomy' => 'theme',
+					'taxonomy' => 'sedoo-theme-labo',
 					'field'    => 'slug',
 					'terms'    => $term->slug,
 				),
@@ -124,13 +122,8 @@ while ( $the_query->have_posts() ) {
 			?>
 			<div class="post-container">
 			<?php
-				get_template_part( 'template-parts/content-theme', get_post_format() );
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				// if ( comments_open() || get_comments_number() ) :
-				// 	comments_template();
-				// endif;
-				?>
+				include( 'template-parts/content-theme.php' );
+			?>
 			</div>
 			<?php
 			} // End of the loop.

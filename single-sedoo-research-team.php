@@ -1,5 +1,3 @@
-<h1>single-sedoo-research-team.php</h1>
-
 <?php
 /**
  * template for Research Teams CPT (show post / platform associate by theme taxonomy)
@@ -9,7 +7,7 @@ get_header();
 
 while ( have_posts() ) : the_post();
 
-   $categories = get_the_terms( get_the_id(), 'theme');  // recup des terms de la taxonomie $parameters['category']
+   $categories = get_the_terms( get_the_id(), 'sedoo-theme-labo');  // recup des terms de la taxonomie $parameters['category']
    $terms=array();
    if (is_array($categories) || is_object($categories))
    {
@@ -18,7 +16,7 @@ while ( have_posts() ) : the_post();
       }
    }
 
-   $sedooResearchTeamtags = get_the_terms( get_the_id(), 'sedooResearchTeamTag');  // recup des terms de la taxonomie $parameters['category']
+   $sedooResearchTeamtags = get_the_terms( get_the_id(), 'sedoo-research-team-tag');  // recup des terms de la taxonomie $parameters['category']
    $sedooResearchTeamTerms=array();
    if (is_array($sedooResearchTeamtags) || is_object($sedooResearchTeamtags))
    {
@@ -26,12 +24,12 @@ while ( have_posts() ) : the_post();
         array_push($sedooResearchTeamTerms, $sedooResearchTeamTerm_slug->slug);
      }
    }
-   get_template_part( 'template-parts/header-content', 'page' );
+   include( 'template-parts/header-content-page.php' );
 ?>
 
 	<div id="content-area" class="wrapper sidebar toc-left">
       <?php
-      get_template_part( 'template-parts/content', 'tpl-page' );
+      include( 'template-parts/content-tpl-page.php' );
       ?>
 				
       <aside>
@@ -47,10 +45,10 @@ while ( have_posts() ) : the_post();
               'post__not_in'          => array(get_the_id()),    //exclu le post courant
               'orderby'               => 'date',
               'order'                 => 'DESC',
-              'lang'                  => pll_current_language(),    // use language slug in the query
+            //   'lang'                  => pll_current_language(),    // use language slug in the query
               'tax_query'             => array(
                                       array(
-                                         'taxonomy' => 'sedooResearchTeamTag',
+                                         'taxonomy' => 'sedoo-research-team-tag',
                                          'field'    => 'slug',
                                          'terms'    => $sedooResearchTeamTerms,
                                       ),
@@ -61,25 +59,25 @@ while ( have_posts() ) : the_post();
            sedoo_labtools_get_associate_content($parameters, $args);
          ?>
 
-         <!-- Products --> 
+         <!-- Plaforms --> 
          <?php
             $parameters = array(
-                'sectionTitle'    => "Products",
+                'sectionTitle'    => "Plaforms",
              );
              
              $args = array(
-               'post_type'             => 'products',
+               'post_type'             => 'sedoo-platform',
                'post_status'           => array( 'publish' ),
                'posts_per_page'        => '-1',            // -1 pour liste sans limite
                'post__not_in'          => array(get_the_id()),    //exclu le post courant
                'orderby'               => 'title',
                'order'                 => 'ASC',
-               'lang'                  => pll_current_language(),    // use language slug in the query
+               // 'lang'                  => pll_current_language(),    // use language slug in the query
                'tax_query'             => array(
                                        array(
-                                          'taxonomy' => 'sedooResearchTeamTag',
+                                          'taxonomy' => 'sedoo-theme-labo',
                                           'field'    => 'slug',
-                                          'terms'    => $sedooResearchTeamTerms,
+                                          'terms'    => $terms,
                                        ),
                                     ),
                // 'meta_key'              => '_wp_page_template',

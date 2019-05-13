@@ -1,16 +1,17 @@
 <?php
 
 /**
- * Registers the `sedooResearchTeamTag` taxonomy,
+ * Registers the `sedoo-research-team-tag` taxonomy,
  * for use with 'post', 'sedoo-research-team'.
  */
-function sedooResearchTeamTag_init() {
-	register_taxonomy( 'sedooResearchTeamTag', array( 'post', 'sedoo-research-team' ), array(
-		'hierarchical'      => false,
+function sedoo_research_team_tag_init() {
+	register_taxonomy( 'sedoo-research-team-tag', array( 'post', 'page', 'sedoo-research-team' ), array(
+		'hierarchical'      => true,
 		'public'            => true,
 		'show_in_nav_menus' => true,
 		'show_ui'           => true,
-		'show_admin_column' => false,
+		'show_admin_column' => true,
+		'show_tagcloud'     => true,
 		'query_var'         => true,
 		'rewrite'           => true,
 		'capabilities'      => array(
@@ -40,26 +41,26 @@ function sedooResearchTeamTag_init() {
 			'menu_name'                  => __( 'Research Team Tags', 'sedoo-wppl-labtools' ),
 			'items_list_navigation'      => __( 'Research Team Tags list navigation', 'sedoo-wppl-labtools' ),
 			'items_list'                 => __( 'Research Team Tags list', 'sedoo-wppl-labtools' ),
-			'most_used'                  => _x( 'Most Used', 'sedooResearchTeamTag', 'sedoo-wppl-labtools' ),
+			'most_used'                  => _x( 'Most Used', 'sedoo-research-team-tag', 'sedoo-wppl-labtools' ),
 			'back_to_items'              => __( '&larr; Back to Research Team Tags', 'sedoo-wppl-labtools' ),
 		),
 		'show_in_rest'      => true,
-		'rest_base'         => 'sedooResearchTeamTag',
+		'rest_base'         => 'sedoo-research-team-tag',
 		'rest_controller_class' => 'WP_REST_Terms_Controller',
 	) );
 
 }
-add_action( 'init', 'sedooResearchTeamTag_init' );
+add_action( 'init', 'sedoo_research_team_tag_init' );
 
 /**
- * Sets the post updated messages for the `sedooResearchTeamTag` taxonomy.
+ * Sets the post updated messages for the `sedoo-research-team-tag` taxonomy.
  *
  * @param  array $messages Post updated messages.
- * @return array Messages for the `sedooResearchTeamTag` taxonomy.
+ * @return array Messages for the `sedoo-research-team-tag` taxonomy.
  */
-function sedooResearchTeamTag_updated_messages( $messages ) {
+function sedoo_research_team_tag_updated_messages( $messages ) {
 
-	$messages['sedooResearchTeamTag'] = array(
+	$messages['sedoo-research-team-tag'] = array(
 		0 => '', // Unused. Messages start at index 1.
 		1 => __( 'Research Team Tag added.', 'sedoo-wppl-labtools' ),
 		2 => __( 'Research Team Tag deleted.', 'sedoo-wppl-labtools' ),
@@ -71,4 +72,4 @@ function sedooResearchTeamTag_updated_messages( $messages ) {
 
 	return $messages;
 }
-add_filter( 'term_updated_messages', 'sedooResearchTeamTag_updated_messages' );
+add_filter( 'term_updated_messages', 'sedoo_research_team_tag_updated_messages' );
