@@ -31,11 +31,11 @@ function sedoo_labtools_get_associate_content($parameters, $args) {
         while ( $the_query->have_posts() ) {
             $the_query->the_post();
              
-            // $titleItem=mb_strimwidth(get_the_title(), 0, 100, '...');  
+            $titleItem=mb_strimwidth(get_the_title(), 0, 65, '...');  
             ?>
                 <li>
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <?php the_title(); ?>
+                        <?php echo $titleItem ?>
                     </a>
                 </li>
             <?php
