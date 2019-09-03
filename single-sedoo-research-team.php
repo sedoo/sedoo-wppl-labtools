@@ -84,7 +84,37 @@ while ( have_posts() ) : the_post();
                // 'meta_value'            => '', // template-name.php
             );
     
-            sedoo_labtools_get_associate_content($parameters, $args);
+            // sedoo_labtools_get_associate_content($parameters, $args);
+            ?>
+
+            <?php
+            // check if the flexible content field has rows of data
+            if( have_rows('right_column') ):
+
+               // loop through the rows of data
+            while ( have_rows('right_column') ) : the_row();
+
+                  if( get_row_layout() == 'related_content' ):
+
+                     sedoo_labtools_get_associate_content_arguments( get_sub_field('title'), get_sub_field('type_of_content'), get_sub_field('taxonomies'), get_sub_field('post_number'), get_sub_field('post_offset') );
+                     
+                  endif;
+
+                  if( get_row_layout() == 'related_news' ):
+
+                     $type_of_content = 'post';
+                     sedoo_labtools_get_associate_content_arguments( get_sub_field('title'), $type_of_content, get_sub_field('taxonomies'), get_sub_field('post_number'), get_sub_field('post_offset') );
+
+                  endif;
+
+            endwhile;
+
+            else :
+
+            // no layouts found
+
+            endif;
+
             ?>
       </aside>
 

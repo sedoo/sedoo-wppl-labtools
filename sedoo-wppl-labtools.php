@@ -47,6 +47,7 @@ include 'taxonomies/sedooPlatformTag.php';
 include 'taxonomies/sedooResearchTeamTag.php';
 include 'sedoo-wppl-labtools-display.php';
 include 'inc/sedoo-wppl-labtools-functions.php';
+include 'inc/sedoo-wppl-labtools-acf.php';
 
 
 

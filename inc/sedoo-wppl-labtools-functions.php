@@ -13,6 +13,44 @@ add_post_type_support( 'page', 'excerpt' );
  */
 add_theme_support( 'post-thumbnails' );
 
+/**
+ * Préparation de la WP_Query des contenus associés 
+ * 
+ */
+function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset) {
+     
+    $categories_field = get_the_terms( get_the_id(), $taxonomy);  // recup des terms de la taxonomie $parameters['category']
+    $terms_fields=array();
+    if (is_array($categories_field) || is_object($categories_field))
+    {
+    foreach ($categories_field as $term_slug) {        
+        array_push($terms_fields, $term_slug->slug);
+    }
+    }
+
+    $parameters = array(
+    'sectionTitle'    => $title,
+    );
+
+    $args = array(
+    'post_type'             => $type_of_content,
+    'post_status'           => array( 'publish' ),
+    'posts_per_page'        => $post_number,            // -1 pour liste sans limite
+    'post__not_in'          => array(get_the_id()),    //exclu le post courant
+    'orderby'               => 'title',
+    'order'                 => 'ASC',
+    // 'lang'                  => pll_current_language(),    // use language slug in the query
+    'tax_query'             => array(
+                            array(
+                                'taxonomy' => $taxonomy,
+                                'field'    => 'slug',
+                                'terms'    => $terms_fields,
+                            ),
+                            ),
+    );
+
+    sedoo_labtools_get_associate_content($parameters, $args);
+}
 
 /**
  * Affichage des contenus associés
