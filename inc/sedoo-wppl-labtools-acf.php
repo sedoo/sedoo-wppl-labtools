@@ -1,6 +1,34 @@
 <?php
 
 /**
+ * Options du plugin
+ */
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Lab Tools Settings',
+		'menu_title'	=> 'Lab Tools Settings',
+		'menu_slug' 	=> 'lab-tools-settings',
+		'capability'	=> 'activate_plugins',
+		'redirect'		=> true
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Lab Tools Custom Posts Type',
+		'menu_title'	=> 'Custom Posts Type ',
+		'parent_slug'	=> 'lab-tools-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Lab Tools Custom Taxonomies',
+		'menu_title'	=> 'Custom Taxonomies ',
+		'parent_slug'	=> 'lab-tools-settings',
+	));
+	
+}
+
+/**
  * Charger dynamiquement les choix du menu déroulant
  * Filtre : acf/load_field
  */

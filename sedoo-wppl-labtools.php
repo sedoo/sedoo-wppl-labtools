@@ -38,13 +38,23 @@ function sedoo_labtools_scripts() {
 }
 add_action('wp_enqueue_scripts','sedoo_labtools_scripts');
 
+if ( get_field('sedoo-platform', 'option') == 1) { 
+    include 'post-types/sedoo-platform.php';
+}
 
+if ( get_field('sedoo-research-team', 'option') == 1) {
+    include 'post-types/sedoo-research-team.php';
+}
 
-include 'post-types/sedoo-platform.php';
-include 'post-types/sedoo-research-team.php';
-include 'taxonomies/sedoo-theme-labo.php';
-include 'taxonomies/sedooPlatformTag.php';
-include 'taxonomies/sedooResearchTeamTag.php';
+if ( get_field('sedoo-theme-labo', 'option') == 1) {
+    include 'taxonomies/sedoo-theme-labo.php';
+}
+if ( get_field('sedoo-platform-tag', 'option') == 1) {
+    include 'taxonomies/sedooPlatformTag.php';
+}
+if ( get_field('sedoo-research-team-tag', 'option') == 1) {
+    include 'taxonomies/sedooResearchTeamTag.php';
+}
 include 'sedoo-wppl-labtools-display.php';
 include 'inc/sedoo-wppl-labtools-functions.php';
 include 'inc/sedoo-wppl-labtools-acf.php';

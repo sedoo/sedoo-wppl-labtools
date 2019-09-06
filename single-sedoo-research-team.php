@@ -33,61 +33,7 @@ while ( have_posts() ) : the_post();
       ?>
 				
       <aside>
-         <!-- NEWS --> 
          <?php
-            $parameters = array(
-               'sectionTitle'    => 'News',
-            );            
-            $args = array(
-              'post_type'             => 'post',
-              'post_status'           => array( 'publish' ),
-              'posts_per_page'        => '7',            // -1 pour liste sans limite
-              'post__not_in'          => array(get_the_id()),    //exclu le post courant
-              'orderby'               => 'date',
-              'order'                 => 'DESC',
-            //   'lang'                  => pll_current_language(),    // use language slug in the query
-              'tax_query'             => array(
-                                      array(
-                                         'taxonomy' => 'sedoo-research-team-tag',
-                                         'field'    => 'slug',
-                                         'terms'    => $sedooResearchTeamTerms,
-                                      ),
-                                   ),
-              // 'meta_key'              => '_wp_page_template',
-              // 'meta_value'            => '', // template-name.php
-           );            
-           sedoo_labtools_get_associate_content($parameters, $args);
-         ?>
-
-         <!-- Plaforms --> 
-         <?php
-            $parameters = array(
-                'sectionTitle'    => "Platforms",
-             );
-             
-             $args = array(
-               'post_type'             => 'sedoo-platform',
-               'post_status'           => array( 'publish' ),
-               'posts_per_page'        => '-1',            // -1 pour liste sans limite
-               'post__not_in'          => array(get_the_id()),    //exclu le post courant
-               'orderby'               => 'title',
-               'order'                 => 'ASC',
-               // 'lang'                  => pll_current_language(),    // use language slug in the query
-               'tax_query'             => array(
-                                       array(
-                                          'taxonomy' => 'sedoo-theme-labo',
-                                          'field'    => 'slug',
-                                          'terms'    => $terms,
-                                       ),
-                                    ),
-               // 'meta_key'              => '_wp_page_template',
-               // 'meta_value'            => '', // template-name.php
-            );
-    
-            // sedoo_labtools_get_associate_content($parameters, $args);
-            ?>
-
-            <?php
             // check if the flexible content field has rows of data
             if( have_rows('right_column') ):
 
