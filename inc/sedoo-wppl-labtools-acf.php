@@ -28,6 +28,33 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 
+
+/**
+ * ACF gutenberg Block
+ */
+
+function sedoo_labtools_register_acf_block_types() {
+
+    // register a testimonial block.
+    acf_register_block_type(array(
+        'name'              => 'sedoo_labtools_relatedBlock',
+        'title'             => __('Related Block'),
+        'description'       => __('Ajout de contenus en relation.'),
+        'render_callback'	=> 'sedoo_labtools_relatedBlock_render_callback',
+        'category'          => 'widgets',
+        'icon'              => 'category',
+        'keywords'          => array( 'équipe', 'plateforme' ),
+    ));
+}
+
+// Check if function exists and hook into setup.
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', 'sedoo_labtools_register_acf_block_types');
+}
+
+
+
+
 /**
  * Charger dynamiquement les choix du menu déroulant
  * Filtre : acf/load_field
@@ -78,6 +105,6 @@ function sedoo_labtools_acf_populate_taxonomies($field) {
 	$field['choices'] = $taxonomies_list;
 	return $field;
 }
-add_filter('acf/load_field/name=taxonomies', 'sedoo_labtools_acf_populate_taxonomies');
+add_filter('acf/load_field/name=relatedContentTaxonomies', 'sedoo_labtools_acf_populate_taxonomies');
 
 ?>

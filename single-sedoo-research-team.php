@@ -24,12 +24,12 @@ while ( have_posts() ) : the_post();
         array_push($sedooResearchTeamTerms, $sedooResearchTeamTerm_slug->slug);
      }
    }
-   include( 'template-parts/header-content-page.php' );
+   // include( 'template-parts/header-content-page.php' );
 ?>
 
 	<div id="content-area" class="wrapper sidebar toc-left">
       <?php
-      include( 'template-parts/content-tpl-page.php' );
+      include( get_template_directory() . '/template-parts/content-page.php' );
       ?>
 				
       <aside>
