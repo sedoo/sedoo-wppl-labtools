@@ -4,7 +4,6 @@
 */
 
 get_header(); 
-
 while ( have_posts() ) : the_post();
 
    $categories = get_the_terms( get_the_id(), 'sedoo-theme-labo');  // recup des terms de la taxonomie $parameters['category']
@@ -24,50 +23,49 @@ while ( have_posts() ) : the_post();
         array_push($sedooResearchTeamTerms, $sedooResearchTeamTerm_slug->slug);
      }
    }
-   include( 'template-parts/header-content-page.php' );
 ?>
-
-	<div id="content-area" class="wrapper sidebar toc-left">
+<div id="primary" class="content-area">
+   <main id="main" class="site-main">
       <?php
-      include( 'template-parts/content-tpl-page.php' );
+      if (get_the_post_thumbnail()) {
       ?>
-				
-      <aside>
-         <?php
-            // check if the flexible content field has rows of data
-            if( have_rows('right_column') ):
-
-               // loop through the rows of data
-            while ( have_rows('right_column') ) : the_row();
-
-                  if( get_row_layout() == 'related_content' ):
-
-                     sedoo_labtools_get_associate_content_arguments( get_sub_field('title'), get_sub_field('type_of_content'), get_sub_field('taxonomies'), get_sub_field('post_number'), get_sub_field('post_offset') );
-                     
-                  endif;
-
-                  if( get_row_layout() == 'related_news' ):
-
-                     $type_of_content = 'post';
-                     sedoo_labtools_get_associate_content_arguments( get_sub_field('title'), $type_of_content, get_sub_field('taxonomies'), get_sub_field('post_number'), get_sub_field('post_offset') );
-
-                  endif;
-
-            endwhile;
-
-            else :
-
-            // no layouts found
-
-            endif;
-
-            ?>
-      </aside>
+            <header id="cover">
+               <?php the_post_thumbnail(); ?>
+            </header>
+      <?php 
+      }
+      ?>
+      <div class="wrapper-content">
+      <?php
+      
+      include( get_template_directory() . '/template-parts/content-page.php' );
 
 
-	</div><!-- #content-area -->
-
-
+      ?>
+		</div>
+	</main><!-- #main -->
+   <?php // table_content ( value )
+   if (get_field( 'table_content' )):
+   ?>
+   <aside id="stickyMenu" class="open">
+      <div>
+            <p>Sommaire</p>
+            <nav role="sommaire">
+               <ol id="tocList">
+                  
+               </ol>
+            </nav>
+            <button class="bobinette">
+               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
+                        <rect fill="none" width="30" height="30"/>
+                        <polyline points="
+                        10.71,2.41 23.29,15 10.71,27.59 	"/>
+               </svg> 
+            </button>
+      </div>
+   </aside>
+   <?php endif; ?>
+</div><!-- #primary -->
 <?php
 endwhile; // End of the loop.
 // get_sidebar();
