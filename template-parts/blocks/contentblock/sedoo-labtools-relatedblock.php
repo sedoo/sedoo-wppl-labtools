@@ -16,8 +16,7 @@ if( !empty($block['align']) ) {
 }
 
 if( get_field('relatedContentTitle') ):
-
-    sedoo_labtools_get_associate_content_arguments( get_field('relatedContentTitle'), get_field('relatedContentTypeOfContent'), get_field(' relatedContentTaxonomies'), get_field('post_number'), get_field('post_offset') );
+    sedoo_labtools_get_associate_content_arguments( get_field('relatedContentTitle'), get_field('relatedContentTypeOfContent'), get_field('relatedContentTaxonomies'), get_field('post_number'), get_field('post_offset') );
     
 endif;
 

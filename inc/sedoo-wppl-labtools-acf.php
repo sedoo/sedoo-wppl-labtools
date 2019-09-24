@@ -35,10 +35,21 @@ if( function_exists('acf_add_options_page') ) {
 
 function sedoo_labtools_register_acf_block_types() {
 
-    // register a testimonial block.
+    // register related block content.
     acf_register_block_type(array(
         'name'              => 'sedoo_labtools_relatedBlock',
         'title'             => __('Related Block'),
+        'description'       => __('Ajout de contenus en relation.'),
+        'render_callback'	=> 'sedoo_labtools_relatedBlock_render_callback',
+        'category'          => 'widgets',
+        'icon'              => 'category',
+        'keywords'          => array( 'équipe', 'plateforme' ),
+    ));
+
+    // register Post block.
+    acf_register_block_type(array(
+        'name'              => 'sedoo_labtools_relatedBlock',
+        'title'             => __('Post Block'),
         'description'       => __('Ajout de contenus en relation.'),
         'render_callback'	=> 'sedoo_labtools_relatedBlock_render_callback',
         'category'          => 'widgets',
@@ -67,10 +78,10 @@ function sedoo_labtools_acf_populate_post_type($field) {
         // 'name' => array('sedoo-platform', 'sedoo-research-team'),
         // 'labels' => array('Research team', 'Platform'),
         'public'   => true,
-        '_builtin' => false
+        '_builtin' => true
     );
     $output = 'object'; // names or objects, note names is the default
-    $operator = 'and'; // 'and' or 'or'
+    $operator = 'or'; // 'and' or 'or'
     
     $post_types = get_post_types( $args, $output, $operator );    
     foreach ( $post_types as $post_type ) {        
@@ -81,7 +92,7 @@ function sedoo_labtools_acf_populate_post_type($field) {
 	$field['choices'] = $content_type_list;
 	return $field;
 }
-add_filter('acf/load_field/name=type_of_content', 'sedoo_labtools_acf_populate_post_type');
+add_filter('acf/load_field/name=relatedContentTypeOfContent', 'sedoo_labtools_acf_populate_post_type');
 
 function sedoo_labtools_acf_populate_taxonomies($field) {
     

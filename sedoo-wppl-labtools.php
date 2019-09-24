@@ -36,7 +36,7 @@ function sedoo_labtools_scripts() {
     wp_register_style( 'prefix-style', plugins_url('css/sedoo_labtools.css', __FILE__) );
     wp_enqueue_style( 'prefix-style' );
 }
-add_action('wp_enqueue_scripts','sedoo_labtools_scripts');
+// add_action('wp_enqueue_scripts','sedoo_labtools_scripts');
 
 if ( get_field('sedoo-platform', 'option') == 1) { 
     include 'post-types/sedoo-platform.php';
