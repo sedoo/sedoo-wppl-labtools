@@ -7,7 +7,7 @@
  * Author URI:      https://www.sedoo.fr 
  * Text Domain:     sedoo-wppl-labtools
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         0.2.0
  * GitHub Plugin URI: sedoo/sedoo-wppl-labtools
  * GitHub Branch:     master
  * @package         Sedoo_Wppl_Labtools
@@ -36,17 +36,29 @@ function sedoo_labtools_scripts() {
     wp_register_style( 'prefix-style', plugins_url('css/sedoo_labtools.css', __FILE__) );
     wp_enqueue_style( 'prefix-style' );
 }
-add_action('wp_enqueue_scripts','sedoo_labtools_scripts');
+// add_action('wp_enqueue_scripts','sedoo_labtools_scripts');
 
+if ( get_field('sedoo-platform', 'option') == 1) { 
+    include 'post-types/sedoo-platform.php';
+}
 
+if ( get_field('sedoo-research-team', 'option') == 1) {
+    include 'post-types/sedoo-research-team.php';
+}
 
-include 'post-types/sedoo-platform.php';
-include 'post-types/sedoo-research-team.php';
-include 'taxonomies/sedoo-theme-labo.php';
-include 'taxonomies/sedooPlatformTag.php';
-include 'taxonomies/sedooResearchTeamTag.php';
+if ( get_field('sedoo-theme-labo', 'option') == 1) {
+    include 'taxonomies/sedoo-theme-labo.php';
+}
+if ( get_field('sedoo-platform-tag', 'option') == 1) {
+    include 'taxonomies/sedooPlatformTag.php';
+}
+if ( get_field('sedoo-research-team-tag', 'option') == 1) {
+    include 'taxonomies/sedooResearchTeamTag.php';
+}
 include 'sedoo-wppl-labtools-display.php';
 include 'inc/sedoo-wppl-labtools-functions.php';
+include 'inc/sedoo-wppl-labtools-acf.php';
+include 'inc/sedoo-wppl-labtools-acf-fields.php';
 
 
 
