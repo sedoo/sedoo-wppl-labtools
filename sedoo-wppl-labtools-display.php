@@ -105,9 +105,9 @@ function sedoo_labtools_get_associate_content_arguments($title, $type_of_content
     $terms_fields=array();
     if (is_array($categories_field) || is_object($categories_field))
     {
-    foreach ($categories_field as $term_slug) {        
-        array_push($terms_fields, $term_slug->slug);
-    }
+        foreach ($categories_field as $term_slug) {        
+            array_push($terms_fields, $term_slug->slug);
+        }
     }
 
     $parameters = array(
@@ -138,42 +138,19 @@ function sedoo_labtools_get_associate_content_arguments($title, $type_of_content
  * Affichage des contenus associés
  * 
  */
-
 function sedoo_labtools_get_associate_content($parameters, $args, $type_of_content) {
-   
     $the_query = new WP_Query( $args );
-    
     // The Loop
     if ( $the_query->have_posts() ) {
 		echo '<h2>'.__( $parameters['sectionTitle'], 'sedoo-wppl-labtools' ).'</h2>';
 		echo '<section role="listNews" class="post-wrapper">';
-		if ($type_of_content !== "post") {
-		echo '<ul>';
-		}
         while ( $the_query->have_posts() ) {
 			$the_query->the_post();
 
-			if ($type_of_content == "post") {
-				
-				include ( get_template_directory() . '/template-parts/content.php');
-				
-				// include ( plugin_dir_path(__FILE__) . "/template-parts/content.php");
-			}
-			else {
 			$titleItem=mb_strimwidth(get_the_title(), 0, 65, '...');  
-           
-			?>
-                <li>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <?php echo $titleItem ?>
-                    </a>
-                </li>
-            <?php
-			}
+            // include ( get_template_directory() . '/template-parts/content.php'. get_post_type());
+            get_template_part( 'template-parts/content', get_post_type() );
         }
-		if ($type_of_content !== "post") {
-			echo '</ul>';
-			}
 		echo '</section>';
         /* Restore original Post Data */
         wp_reset_postdata();
@@ -181,6 +158,4 @@ function sedoo_labtools_get_associate_content($parameters, $args, $type_of_conte
         // no posts found
     }
 }
-
-
 ?>
