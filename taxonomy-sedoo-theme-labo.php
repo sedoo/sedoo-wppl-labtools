@@ -27,27 +27,18 @@ $args = array(
 		),
 	),
 );
-$the_query = new WP_Query( $args );
-while ( $the_query->have_posts() ) {
-	$the_query->the_post();
+// $the_query = new WP_Query( $args );
+// while ( $the_query->have_posts() ) {
+// 	$the_query->the_post();
 
 ?>
-<div id="breadcrumbs">
-	<div class="wrapper">
-		<?php 
-		// Show breadcrumb if checked in customizer
-		if ( get_theme_mod( 'theme_aeris_breadcrumb' ) == "true") {
-			if (function_exists('the_breadcrumb')) the_breadcrumb(); 
-		}
-		?>		
-	</div>
-</div>
+
 <div class="site-branding" 
     <?php 
     if (get_the_post_thumbnail_url()) {
     ?>
     style="background-image:url(
-    <?php the_post_thumbnail_url( 'full' ); ?>
+    <?php //the_post_thumbnail_url( 'full' ); ?>
     );">
     <?php 
     }
@@ -61,7 +52,7 @@ while ( $the_query->have_posts() ) {
 <div id="content-area" class="wrapper archives">
 	<main id="main" class="site-main" role="main">
 
-	<?php if ( have_posts() ) : ?>
+	<?php //if ( have_posts() ) : ?>
 
 		<header class="page-header">
 			<?php
@@ -84,15 +75,15 @@ while ( $the_query->have_posts() ) {
 		sedoo_labtools_get_associate_content_arguments('Evenements', 'event', 'sedoo-theme-labo', '3', '0');
 
 		// SHOW RESEARCH-TEAM OF THEME
-		sedoo_labtools_get_associate_content_arguments('Research teams', 'sedoo-research-team', 'sedoo-theme-labo', '4', '0');
+		sedoo_labtools_get_associate_content_arguments('Research teams', 'sedoo-research-team', 'sedoo-theme-labo', '-1', '0');
 
 		// SHOW PLATFORM OF THEME
-		sedoo_labtools_get_associate_content_arguments('Platforms', 'sedoo-platform', 'sedoo-theme-labo', '3', '0');
+		sedoo_labtools_get_associate_content_arguments('Platforms', 'sedoo-platform', 'sedoo-theme-labo', '-1', '0');
 		?>
 
 
-<?php endif;
-}?>
+<?php //endif;
+//}?>
 	
 	</main><!-- #main -->
 </div><!-- #content-area -->

@@ -24,7 +24,7 @@ $themeSlugRewrite = "sedoo-theme-labo";
       ?>
       <div class="wrapper-content">
       <?php
-      sedoo_labtools_show_categories($themes, $themeSlugRewrite);
+      // sedoo_labtools_show_categories($themes, $themeSlugRewrite);
       include( get_template_directory() . '/template-parts/content-page.php' );
 
 

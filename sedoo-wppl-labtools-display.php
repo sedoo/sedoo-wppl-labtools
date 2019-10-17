@@ -96,7 +96,7 @@ function sedoo_labtools_relatedBlock_render_callback( $block ) {
 }
 
 /**
- * Préparation de la WP_Query des contenus associés 
+ * Prepare WP_Query for related content 
  * 
  */
 function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset) {
@@ -117,8 +117,7 @@ function sedoo_labtools_get_associate_content_arguments($title, $type_of_content
     $args = array(
     'post_type'             => $type_of_content,
     'post_status'           => array( 'publish' ),
-    'posts_per_page'        => $post_number,            // -1 pour liste sans limite
-    'post__not_in'          => array(get_the_id()),    //exclu le post courant
+    'posts_per_page'        => $post_number,            // -1 no limit
     'orderby'               => 'title',
     'order'                 => 'ASC',
     // 'lang'                  => pll_current_language(),    // use language slug in the query
@@ -130,12 +129,16 @@ function sedoo_labtools_get_associate_content_arguments($title, $type_of_content
                             ),
                             ),
     );
+    //exclude current post if not archive template
+    if (!is_archive()) {
+        $args['post__not_in']=array(get_the_id());
+    }
 
     sedoo_labtools_get_associate_content($parameters, $args, $type_of_content);
 }
 
 /**
- * Affichage des contenus associés
+ * Show related content
  * 
  */
 function sedoo_labtools_get_associate_content($parameters, $args, $type_of_content) {
