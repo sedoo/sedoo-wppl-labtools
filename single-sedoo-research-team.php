@@ -23,8 +23,10 @@ while ( have_posts() ) : the_post();
         array_push($sedooResearchTeamTerms, $sedooResearchTeamTerm_slug->slug);
      }
    }
+   $themes = get_the_terms( $post->ID, 'sedoo-theme-labo');  
+$themeSlugRewrite = "sedoo-theme-labo";
 ?>
-<div id="primary" class="content-area">
+<div id="content-area" class="wrapper">
    <main id="main" class="site-main">
       <?php
       if (get_the_post_thumbnail()) {
@@ -37,7 +39,7 @@ while ( have_posts() ) : the_post();
       ?>
       <div class="wrapper-content">
       <?php
-      
+      // sedoo_labtools_show_categories($themes, $themeSlugRewrite);
       include( get_template_directory() . '/template-parts/content-page.php' );
 
 
