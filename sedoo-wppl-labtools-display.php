@@ -99,7 +99,7 @@ function sedoo_platform_tag_set_template( $template ){
     return $template;
 }
 
-function sedoo_theme_labo_is_template( $template_path ){
+function sedoo_platform_tag_is_template( $template_path ){
 
     //Get template name
     $template = basename($template_path);
