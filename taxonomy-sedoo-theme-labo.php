@@ -72,7 +72,7 @@ $args = array(
 		sedoo_labtools_get_associate_content_arguments('Actualités', 'post', 'sedoo-theme-labo', '3', '0');
 
 		// SHOW EVENT OF THEME
-		sedoo_labtools_get_associate_content_arguments('Evenements', 'event', 'sedoo-theme-labo', '3', '0');
+		// sedoo_labtools_get_associate_content_arguments('Evenements', 'event', 'sedoo-theme-labo', '3', '0');
 
 		// SHOW RESEARCH-TEAM OF THEME
 		sedoo_labtools_get_associate_content_arguments('Research teams', 'sedoo-research-team', 'sedoo-theme-labo', '-1', '0');
