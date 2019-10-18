@@ -55,7 +55,7 @@ function sedoo_platform_single($single_template) {
  * cela permet de surcharger le template directement dans le thème 
  */
 
-
+/**  REGISTER TAXONOMY TPL FOR THEME LABO */
 add_filter('template_include', 'sedoo_theme_labo_set_template');
 function sedoo_theme_labo_set_template( $template ){
 
@@ -78,6 +78,35 @@ function sedoo_theme_labo_is_template( $template_path ){
     //Check if template is taxonomy-sedoo-theme-labo.php
     //Check if template is taxonomy-sedoo-theme-labo-{term-slug}.php
     if( 1 == preg_match('/^taxonomy-sedoo-theme-labo((-(\S*))?).php/',$template) )
+         return true;
+
+    return false;
+}
+
+/**  REGISTER TAXONOMY TPL FOR PLATFORM TAG */
+
+add_filter('template_include', 'sedoo_platform_tag_set_template');
+function sedoo_platform_tag_set_template( $template ){
+
+    //Add option for plugin to turn this off? If so just return $template
+
+    //Check if the taxonomy is being viewed 
+    //Suggested: check also if the current template is 'suitable'
+
+    if( is_tax('sedoo-platform-tag') && !sedoo_platform_tag_is_template($template))
+        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-platform-tag.php';
+
+    return $template;
+}
+
+function sedoo_theme_labo_is_template( $template_path ){
+
+    //Get template name
+    $template = basename($template_path);
+
+    //Check if template is taxonomy-sedoo-platform-tag.php
+    //Check if template is taxonomy-sedoo-platform-tag-{term-slug}.php
+    if( 1 == preg_match('/^taxonomy-sedoo-platform-tag((-(\S*))?).php/',$template) )
          return true;
 
     return false;
