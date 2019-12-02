@@ -69,10 +69,10 @@ $args = array(
 		// 	
 		
 		// SHOW POST OF THEME
-		sedoo_labtools_get_associate_content_arguments('Actualités', 'post', 'sedoo-theme-labo', '3', '0');
+		sedoo_labtools_get_associate_content_arguments('Actualités', 'post', 'sedoo-axe-tag', '3', '0');
 
         // SHOW axe OF axe TAG
-        sedoo_labtools_get_associate_content_arguments('axes', 'sedoo-axe', 'sedoo-axe-tag', '-1', '0');
+        // sedoo_labtools_get_associate_content_arguments('axes', 'sedoo-axe', 'sedoo-axe-tag', '-1', '0');
         
 		// SHOW EVENT OF THEME
 		// sedoo_labtools_get_associate_content_arguments('Evenements', 'event', 'sedoo-theme-labo', '3', '0');
