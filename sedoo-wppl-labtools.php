@@ -7,7 +7,7 @@
  * Author URI:      https://www.sedoo.fr 
  * Text Domain:     sedoo-wppl-labtools
  * Domain Path:     /languages
- * Version:         0.4.2
+ * Version:         0.5.0
  * GitHub Plugin URI: sedoo/sedoo-wppl-labtools
  * GitHub Branch:     master
  * @package         Sedoo_Wppl_Labtools
@@ -41,9 +41,11 @@ function sedoo_labtools_scripts() {
 if ( get_field('sedoo-platform', 'option') == 1) { 
     include 'post-types/sedoo-platform.php';
 }
-
 if ( get_field('sedoo-research-team', 'option') == 1) {
     include 'post-types/sedoo-research-team.php';
+}
+if ( get_field('sedoo-axe', 'option') == 1) {
+    include 'post-types/sedoo-axe.php';
 }
 
 if ( get_field('sedoo-theme-labo', 'option') == 1) {
@@ -55,6 +57,10 @@ if ( get_field('sedoo-platform-tag', 'option') == 1) {
 if ( get_field('sedoo-research-team-tag', 'option') == 1) {
     include 'taxonomies/sedooResearchTeamTag.php';
 }
+if ( get_field('sedoo-axe-tag', 'option') == 1) {
+    include 'taxonomies/sedooAxeTag.php';
+}
+
 include 'sedoo-wppl-labtools-display.php';
 include 'inc/sedoo-wppl-labtools-functions.php';
 include 'inc/sedoo-wppl-labtools-acf.php';
