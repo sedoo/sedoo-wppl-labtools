@@ -46,6 +46,20 @@ function sedoo_platform_single($single_template) {
     return $single_template;
 }
 
+/*
+* REGISTER TPL SINGLE SEDOO-AXE
+*/
+
+add_filter ( 'single_template', 'sedoo_axe_single' );
+function sedoo_axe_single($single_template) {
+    global $post;
+    
+    if ($post->post_type == 'sedoo-axe') {
+        $single_template = plugin_dir_path( __FILE__ ) . 'single-sedoo-axe.php';
+    }
+    return $single_template;
+}
+
 /**
  * REGISTER TPL FOR CUSTOM TAXONOMY sedoo-theme-labo
  * 
@@ -112,6 +126,36 @@ function sedoo_platform_tag_is_template( $template_path ){
     return false;
 }
 
+/**  REGISTER TAXONOMY TPL FOR AXE TAG */
+
+add_filter('template_include', 'sedoo_axe_tag_set_template');
+function sedoo_axe_tag_set_template( $template ){
+
+    //Add option for plugin to turn this off? If so just return $template
+
+    //Check if the taxonomy is being viewed 
+    //Suggested: check also if the current template is 'suitable'
+
+    if( is_tax('sedoo-axe-tag') && !sedoo_axe_tag_is_template($template))
+        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-axe-tag.php';
+
+    return $template;
+}
+
+function sedoo_axe_tag_is_template( $template_path ){
+
+    //Get template name
+    $template = basename($template_path);
+
+    //Check if template is taxonomy-sedoo-axe-tag.php
+    //Check if template is taxonomy-sedoo-axe-tag-{term-slug}.php
+    if( 1 == preg_match('/^taxonomy-sedoo-axe-tag((-(\S*))?).php/',$template) )
+         return true;
+
+    return false;
+}
+
+
 function sedoo_labtools_relatedBlock_render_callback( $block ) {
 	
 	// convert name ("acf/testimonial") into path friendly slug ("testimonial")
@@ -142,14 +186,16 @@ function sedoo_labtools_get_associate_content_arguments($title, $type_of_content
     $parameters = array(
     'sectionTitle'    => $title,
     );
-
+    if (function_exists('pll_current_language')) {
+        $lang = pll_current_language();
+    }
     $args = array(
     'post_type'             => $type_of_content,
     'post_status'           => array( 'publish' ),
     'posts_per_page'        => $post_number,            // -1 no limit
     'orderby'               => 'title',
     'order'                 => 'ASC',
-    // 'lang'                  => pll_current_language(),    // use language slug in the query
+    'lang'			        => $lang,
     'tax_query'             => array(
                             array(
                                 'taxonomy' => $taxonomy,
