@@ -11,6 +11,7 @@ get_header();
 
 // recup le slug du term courant
 $term = get_queried_object();
+var_dump($term);
 /**
  * WP_Query pour lister la page Theme correspondante
 */
@@ -44,7 +45,7 @@ $args = array(
     }
     ?>
     <div>    
-        <h1 class="site-title" rel="bookmark" style="<?php ?>"><span><?php  the_archive_title(); ?></span></h1>
+		<h1 class="site-title" rel="bookmark" style="<?php ?>"><span><?php echo $term->name;?></span></h1>
     </div>
 </div><!-- .site-branding -->
 
@@ -76,9 +77,13 @@ $args = array(
 
 		// SHOW RESEARCH-TEAM OF THEME
 		sedoo_labtools_get_associate_content_arguments('Research teams', 'sedoo-research-team', 'sedoo-theme-labo', '-1', '0');
-
+		
+		// SHOW axe OF axe TAG
+        sedoo_labtools_get_associate_content_arguments('Axes', 'sedoo-axe', 'sedoo-axe-tag', '-1', '0');
+		
 		// SHOW PLATFORM OF THEME
 		sedoo_labtools_get_associate_content_arguments('Platforms', 'sedoo-platform', 'sedoo-theme-labo', '-1', '0');
+
 		?>
 
 
