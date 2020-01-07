@@ -44,7 +44,7 @@ $args = array(
     }
     ?>
     <div>    
-        <h1 class="site-title" rel="bookmark" style="<?php ?>"><span><?php  the_archive_title(); ?></span></h1>
+        <h1 class="site-title" rel="bookmark" style="<?php ?>"><span><?php echo $term->name;?></span></h1>
     </div>
 </div><!-- .site-branding -->
 
@@ -66,13 +66,10 @@ $args = array(
 		//sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset)
 		$tax_slug = get_query_var( 'sedoo-axe-tag' );
 			/* Start the Loop */
-		// 	
+		//
 		
 		// SHOW POST OF THEME
 		sedoo_labtools_get_associate_content_arguments('Actualités', 'post', 'sedoo-axe-tag', '3', '0');
-
-        // SHOW axe OF axe TAG
-        // sedoo_labtools_get_associate_content_arguments('axes', 'sedoo-axe', 'sedoo-axe-tag', '-1', '0');
         
 		// SHOW EVENT OF THEME
 		// sedoo_labtools_get_associate_content_arguments('Evenements', 'event', 'sedoo-theme-labo', '3', '0');
