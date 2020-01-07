@@ -9,7 +9,7 @@ function theia_wpthchild_load_javascript_files() {
 		wp_enqueue_script('theme_aeris_toc', get_template_directory_uri() . '/js/toc.js', array('jquery'), '', false );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'theia_wpthchild_load_javascript_files' );
+//add_action( 'wp_enqueue_scripts', 'theia_wpthchild_load_javascript_files' );
 
 /**
  * DISPLAYS TEMPLATE FOR CTP & CTax
