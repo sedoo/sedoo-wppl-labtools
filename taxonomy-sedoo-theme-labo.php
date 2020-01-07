@@ -11,7 +11,6 @@ get_header();
 
 // recup le slug du term courant
 $term = get_queried_object();
-var_dump($term);
 /**
  * WP_Query pour lister la page Theme correspondante
 */
