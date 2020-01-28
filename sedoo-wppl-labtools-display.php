@@ -3,13 +3,13 @@
 /**
  * Enqueue Javascript files sur template CPT
  */
-function theia_wpthchild_load_javascript_files() {
+function sedoo_labtools_load_javascript_files() {
 	if ( is_singular('sedoo-research-team') || is_singular('sedoo-platform') || is_page_template('template-theme.php')) {
 		wp_enqueue_script('theme_aeris_jquery_sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array('jquery'), '', false );
 		wp_enqueue_script('theme_aeris_toc', get_template_directory_uri() . '/js/toc.js', array('jquery'), '', false );
 	}
 }
-//add_action( 'wp_enqueue_scripts', 'theia_wpthchild_load_javascript_files' );
+//add_action( 'wp_enqueue_scripts', 'sedoo_labtools_load_javascript_files' );
 
 /**
  * DISPLAYS TEMPLATE FOR CTP & CTax
