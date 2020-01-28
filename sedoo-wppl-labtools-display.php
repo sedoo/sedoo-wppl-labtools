@@ -189,12 +189,21 @@ function sedoo_labtools_get_associate_content_arguments($title, $type_of_content
     if (function_exists('pll_current_language')) {
         $lang = pll_current_language();
     }
+
+    if ($type_of_content== 'post') {
+        $orderby = 'date';
+        $order = 'DESC';
+    } else {
+        $orderby = 'title';
+        $order = 'ASC';
+    }
+
     $args = array(
     'post_type'             => $type_of_content,
     'post_status'           => array( 'publish' ),
     'posts_per_page'        => $post_number,            // -1 no limit
-    'orderby'               => 'title',
-    'order'                 => 'ASC',
+    'orderby'               => $orderby,
+    'order'                 => $order,
     'lang'			        => $lang,
     'tax_query'             => array(
                             array(
