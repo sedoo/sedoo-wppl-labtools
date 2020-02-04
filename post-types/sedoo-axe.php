@@ -44,7 +44,7 @@ function sedoo_axe_init() {
 		'menu_position'         => null,
 		'menu_icon'             => 'dashicons-chart-area',
 		'show_in_rest'          => true,
-		'rest_base'             => 'sedoo-axe',
+		'rest_base'             => 'axe',
 		'rest_controller_class' => 'WP_REST_Posts_Controller',
 	) );
 

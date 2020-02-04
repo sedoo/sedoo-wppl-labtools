@@ -47,6 +47,12 @@ if ( get_field('sedoo-research-team', 'option') == 1) {
 if ( get_field('sedoo-axe', 'option') == 1) {
     include 'post-types/sedoo-axe.php';
 }
+if ( get_field('sedoo-project', 'option') == 1) {
+    include 'post-types/sedoo-project.php';
+}
+if ( get_field('sedoo-sno', 'option') == 1) {
+    include 'post-types/sedoo-sno.php';
+}
 
 if ( get_field('sedoo-theme-labo', 'option') == 1) {
     include 'taxonomies/sedoo-theme-labo.php';
@@ -59,6 +65,9 @@ if ( get_field('sedoo-research-team-tag', 'option') == 1) {
 }
 if ( get_field('sedoo-axe-tag', 'option') == 1) {
     include 'taxonomies/sedooAxeTag.php';
+}
+if ( get_field('sedoo-project-tag', 'option') == 1) {
+    include 'taxonomies/sedooProjectTag.php';
 }
 
 include 'sedoo-wppl-labtools-display.php';

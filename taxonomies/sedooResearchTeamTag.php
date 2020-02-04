@@ -5,7 +5,7 @@
  * for use with 'post', 'sedoo-research-team'.
  */
 function sedoo_research_team_tag_init() {
-	register_taxonomy( 'sedoo-research-team-tag', array( 'post', 'page', 'sedoo-research-team' ), array(
+	register_taxonomy( 'sedoo-research-team-tag', array( 'post', 'page', 'sedoo-research-team', 'sedoo-project' ), array(
 		'hierarchical'      => true,
 		'public'            => true,
 		'show_in_nav_menus' => true,
@@ -45,7 +45,7 @@ function sedoo_research_team_tag_init() {
 			'back_to_items'              => __( '&larr; Back to Research Team Tags', 'sedoo-wppl-labtools' ),
 		),
 		'show_in_rest'      => true,
-		'rest_base'         => 'sedoo-research-team-tag',
+		'rest_base'         => 'research-team-tag',
 		'rest_controller_class' => 'WP_REST_Terms_Controller',
 	) );
 

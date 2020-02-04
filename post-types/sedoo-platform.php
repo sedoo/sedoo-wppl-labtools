@@ -44,7 +44,7 @@ function sedoo_platform_init() {
 		'menu_position'         => null,
 		'menu_icon'             => 'dashicons-chart-area',
 		'show_in_rest'          => true,
-		'rest_base'             => 'sedoo-platform',
+		'rest_base'             => 'platform',
 		'rest_controller_class' => 'WP_REST_Posts_Controller',
 	) );
 
