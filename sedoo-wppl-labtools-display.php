@@ -60,6 +60,34 @@ function sedoo_axe_single($single_template) {
     return $single_template;
 }
 
+/*
+* REGISTER TPL SINGLE SEDOO-PROJECT
+*/
+
+add_filter ( 'single_template', 'sedoo_project_single' );
+function sedoo_project_single($single_template) {
+    global $post;
+    
+    if ($post->post_type == 'sedoo-project') {
+        $single_template = plugin_dir_path( __FILE__ ) . 'single-sedoo-project.php';
+    }
+    return $single_template;
+}
+
+/*
+* REGISTER TPL SINGLE SEDOO-SNO
+*/
+
+add_filter ( 'single_template', 'sedoo_sno_single' );
+function sedoo_sno_single($single_template) {
+    global $post;
+    
+    if ($post->post_type == 'sedoo-sno') {
+        $single_template = plugin_dir_path( __FILE__ ) . 'single-sedoo-sno.php';
+    }
+    return $single_template;
+}
+
 /**
  * REGISTER TPL FOR CUSTOM TAXONOMY sedoo-theme-labo
  * 
@@ -155,6 +183,34 @@ function sedoo_axe_tag_is_template( $template_path ){
     return false;
 }
 
+/**  REGISTER TAXONOMY TPL FOR PROJECT TAG */
+
+add_filter('template_include', 'sedoo_project_tag_set_template');
+function sedoo_project_tag_set_template( $template ){
+
+    //Add option for plugin to turn this off? If so just return $template
+
+    //Check if the taxonomy is being viewed 
+    //Suggested: check also if the current template is 'suitable'
+
+    if( is_tax('sedoo-project-tag') && !sedoo_project_tag_is_template($template))
+        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-project-tag.php';
+
+    return $template;
+}
+
+function sedoo_project_tag_is_template( $template_path ){
+
+    //Get template name
+    $template = basename($template_path);
+
+    //Check if template is taxonomy-sedoo-project-tag.php
+    //Check if template is taxonomy-sedoo-project-tag-{term-slug}.php
+    if( 1 == preg_match('/^taxonomy-sedoo-project-tag((-(\S*))?).php/',$template) )
+         return true;
+
+    return false;
+}
 
 function sedoo_labtools_relatedBlock_render_callback( $block ) {
 	

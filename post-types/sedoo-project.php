@@ -39,7 +39,7 @@ function sedoo_project_init() {
 		'menu_position'         => 30,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
 		'has_archive'           => true,
-		'rewrite'               => true,
+		'rewrite'               => array('slug' => 'project','with_front' => true),
 		'query_var'             => true,
 		'menu_position'         => null,
 		'menu_icon'             => 'dashicons-awards',
