@@ -39,12 +39,12 @@ function sedoo_platform_init() {
 		'menu_position'         => 30,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
 		'has_archive'           => true,
-		'rewrite'               => true,
+		'rewrite'               => array('slug' => 'platform','with_front' => true),
 		'query_var'             => true,
 		'menu_position'         => null,
 		'menu_icon'             => 'dashicons-chart-area',
 		'show_in_rest'          => true,
-		'rest_base'             => 'sedoo-platform',
+		'rest_base'             => 'platform',
 		'rest_controller_class' => 'WP_REST_Posts_Controller',
 	) );
 

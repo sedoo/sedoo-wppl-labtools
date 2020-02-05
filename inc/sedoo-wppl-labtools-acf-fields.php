@@ -1,6 +1,7 @@
 <?php
 if( function_exists('acf_add_local_field_group') ):
 
+    // GROUP : Activation des customs post
     acf_add_local_field_group(array(
         'key' => 'group_5d7126e8db53f',
         'title' => 'Activation des customs post',
@@ -62,6 +63,44 @@ if( function_exists('acf_add_local_field_group') ):
                 'ui_on_text' => 'Activé',
                 'ui_off_text' => 'Désactivé',
             ),
+            array(
+                'key' => 'field_5e39896f585b3',
+                'label' => 'Projets',
+                'name' => 'sedoo-project',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => 'Activé',
+                'ui_off_text' => 'Désactivé',
+            ),
+            array(
+                'key' => 'field_5e39898c967df',
+                'label' => 'Services d\'observation',
+                'name' => 'sedoo-sno',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => 'Activé',
+                'ui_off_text' => 'Désactivé',
+            ),
         ),
         'location' => array(
             array(
@@ -82,6 +121,7 @@ if( function_exists('acf_add_local_field_group') ):
         'description' => '',
     ));
     
+    // GROUP : Activation des customs taxonomies
     acf_add_local_field_group(array(
         'key' => 'group_5d712dfbac85e',
         'title' => 'Activation des customs taxonomies',
@@ -382,6 +422,41 @@ if( function_exists('acf_add_local_field_group') ):
                 'return_format' => 'value',
                 'placeholder' => '',
             ),
+            array(
+                'key' => 'field_5e398c7ce7517',
+                'label' => 'Projects',
+                'name' => '',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
+            array(
+                'key' => 'field_5e398c95e7518',
+                'label' => 'Tag project',
+                'name' => 'sedoo-project-tag',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => 'Activé',
+                'ui_off_text' => 'Désactivé',
+            ),
         ),
         'location' => array(
             array(
@@ -401,7 +476,8 @@ if( function_exists('acf_add_local_field_group') ):
         'active' => true,
         'description' => '',
     ));
-    
+
+    // GROUP : Custom block Related Content
     acf_add_local_field_group(array(
         'key' => 'group_5d80ab6e372f7',
         'title' => 'Custom block Related Content',

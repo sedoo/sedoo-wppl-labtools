@@ -3,13 +3,13 @@
 /**
  * Enqueue Javascript files sur template CPT
  */
-function theia_wpthchild_load_javascript_files() {
+function sedoo_labtools_load_javascript_files() {
 	if ( is_singular('sedoo-research-team') || is_singular('sedoo-platform') || is_page_template('template-theme.php')) {
 		wp_enqueue_script('theme_aeris_jquery_sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array('jquery'), '', false );
 		wp_enqueue_script('theme_aeris_toc', get_template_directory_uri() . '/js/toc.js', array('jquery'), '', false );
 	}
 }
-//add_action( 'wp_enqueue_scripts', 'theia_wpthchild_load_javascript_files' );
+//add_action( 'wp_enqueue_scripts', 'sedoo_labtools_load_javascript_files' );
 
 /**
  * DISPLAYS TEMPLATE FOR CTP & CTax
@@ -56,6 +56,34 @@ function sedoo_axe_single($single_template) {
     
     if ($post->post_type == 'sedoo-axe') {
         $single_template = plugin_dir_path( __FILE__ ) . 'single-sedoo-axe.php';
+    }
+    return $single_template;
+}
+
+/*
+* REGISTER TPL SINGLE SEDOO-PROJECT
+*/
+
+add_filter ( 'single_template', 'sedoo_project_single' );
+function sedoo_project_single($single_template) {
+    global $post;
+    
+    if ($post->post_type == 'sedoo-project') {
+        $single_template = plugin_dir_path( __FILE__ ) . 'single-sedoo-project.php';
+    }
+    return $single_template;
+}
+
+/*
+* REGISTER TPL SINGLE SEDOO-SNO
+*/
+
+add_filter ( 'single_template', 'sedoo_sno_single' );
+function sedoo_sno_single($single_template) {
+    global $post;
+    
+    if ($post->post_type == 'sedoo-sno') {
+        $single_template = plugin_dir_path( __FILE__ ) . 'single-sedoo-sno.php';
     }
     return $single_template;
 }
@@ -155,6 +183,34 @@ function sedoo_axe_tag_is_template( $template_path ){
     return false;
 }
 
+/**  REGISTER TAXONOMY TPL FOR PROJECT TAG */
+
+add_filter('template_include', 'sedoo_project_tag_set_template');
+function sedoo_project_tag_set_template( $template ){
+
+    //Add option for plugin to turn this off? If so just return $template
+
+    //Check if the taxonomy is being viewed 
+    //Suggested: check also if the current template is 'suitable'
+
+    if( is_tax('sedoo-project-tag') && !sedoo_project_tag_is_template($template))
+        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-project-tag.php';
+
+    return $template;
+}
+
+function sedoo_project_tag_is_template( $template_path ){
+
+    //Get template name
+    $template = basename($template_path);
+
+    //Check if template is taxonomy-sedoo-project-tag.php
+    //Check if template is taxonomy-sedoo-project-tag-{term-slug}.php
+    if( 1 == preg_match('/^taxonomy-sedoo-project-tag((-(\S*))?).php/',$template) )
+         return true;
+
+    return false;
+}
 
 function sedoo_labtools_relatedBlock_render_callback( $block ) {
 	
@@ -189,12 +245,21 @@ function sedoo_labtools_get_associate_content_arguments($title, $type_of_content
     if (function_exists('pll_current_language')) {
         $lang = pll_current_language();
     }
+
+    if ($type_of_content== 'post') {
+        $orderby = 'date';
+        $order = 'DESC';
+    } else {
+        $orderby = 'title';
+        $order = 'ASC';
+    }
+
     $args = array(
     'post_type'             => $type_of_content,
     'post_status'           => array( 'publish' ),
     'posts_per_page'        => $post_number,            // -1 no limit
-    'orderby'               => 'title',
-    'order'                 => 'ASC',
+    'orderby'               => $orderby,
+    'order'                 => $order,
     'lang'			        => $lang,
     'tax_query'             => array(
                             array(

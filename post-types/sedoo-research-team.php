@@ -39,12 +39,12 @@ function sedoo_research_team_init() {
 		'menu_position'         => 10,
 		'supports'              => array( 'title', 'editor','excerpt', 'thumbnail', 'revisions' ),
 		'has_archive'           => true,
-		'rewrite'               => true,
+		'rewrite'               => array('slug' => 'research-team','with_front' => true),
 		'query_var'             => true,
 		'menu_position'         => null,
 		'menu_icon'             => 'dashicons-groups',
 		'show_in_rest'          => true,
-		'rest_base'             => 'sedoo-research-team',
+		'rest_base'             => 'research-team',
 		'rest_controller_class' => 'WP_REST_Posts_Controller',
 	) );
 
