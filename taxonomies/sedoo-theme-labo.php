@@ -45,7 +45,7 @@ function sedoo_theme_labo_init() {
 			'back_to_items'              => __( '&larr; Back to Themes', 'sedoo-wppl-labtools' ),
 		),
 		'show_in_rest'      => true,
-		'rest_base'         => 'themes',
+		'rest_base'         => 'research-themes',
 		'rest_controller_class' => 'WP_REST_Terms_Controller',
 	) );
 
