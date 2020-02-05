@@ -39,7 +39,7 @@ function sedoo_platform_init() {
 		'menu_position'         => 30,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
 		'has_archive'           => true,
-		'rewrite'               => true,
+		'rewrite'               => array('slug' => 'platform','with_front' => true),
 		'query_var'             => true,
 		'menu_position'         => null,
 		'menu_icon'             => 'dashicons-chart-area',

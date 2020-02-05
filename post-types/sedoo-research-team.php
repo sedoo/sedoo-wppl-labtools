@@ -39,7 +39,7 @@ function sedoo_research_team_init() {
 		'menu_position'         => 10,
 		'supports'              => array( 'title', 'editor','excerpt', 'thumbnail', 'revisions' ),
 		'has_archive'           => true,
-		'rewrite'               => 'research-team',
+		'rewrite'               => array('slug' => 'research-team','with_front' => true),
 		'query_var'             => true,
 		'menu_position'         => null,
 		'menu_icon'             => 'dashicons-groups',

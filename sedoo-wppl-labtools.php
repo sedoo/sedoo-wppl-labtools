@@ -7,7 +7,7 @@
  * Author URI:      https://www.sedoo.fr 
  * Text Domain:     sedoo-wppl-labtools
  * Domain Path:     /languages
- * Version:         0.6.1
+ * Version:         0.6.2
  * GitHub Plugin URI: sedoo/sedoo-wppl-labtools
  * GitHub Branch:     master
  * @package         Sedoo_Wppl_Labtools
@@ -38,20 +38,28 @@ function sedoo_labtools_scripts() {
 }
 // add_action('wp_enqueue_scripts','sedoo_labtools_scripts');
 
+// Prepare activation for thumbnail support for CPT
+$thumbnailSupport=array();
+
 if ( get_field('sedoo-platform', 'option') == 1) { 
     include 'post-types/sedoo-platform.php';
+    array_push($thumbnailSupport, 'sedoo-platform');
 }
 if ( get_field('sedoo-research-team', 'option') == 1) {
     include 'post-types/sedoo-research-team.php';
+    array_push($thumbnailSupport, 'sedoo-research-team');
 }
 if ( get_field('sedoo-axe', 'option') == 1) {
     include 'post-types/sedoo-axe.php';
+    array_push($thumbnailSupport, 'sedoo-axe');
 }
 if ( get_field('sedoo-project', 'option') == 1) {
     include 'post-types/sedoo-project.php';
+    array_push($thumbnailSupport, 'sedoo-project');
 }
 if ( get_field('sedoo-sno', 'option') == 1) {
     include 'post-types/sedoo-sno.php';
+    array_push($thumbnailSupport, 'sedoo-sno');
 }
 
 if ( get_field('sedoo-theme-labo', 'option') == 1) {
@@ -69,6 +77,13 @@ if ( get_field('sedoo-axe-tag', 'option') == 1) {
 if ( get_field('sedoo-project-tag', 'option') == 1) {
     include 'taxonomies/sedooProjectTag.php';
 }
+
+// Active thumbnail support
+function sedoo_wppl_labtools_thumbnail_support() {
+    add_theme_support( 'post-thumbnails', $thumbnailSupport );
+}
+
+add_action('after_setup_theme','sedoo_wppl_labtools_thumbnail_support');
 
 include 'sedoo-wppl-labtools-display.php';
 include 'inc/sedoo-wppl-labtools-functions.php';
