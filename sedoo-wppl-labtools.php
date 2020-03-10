@@ -36,7 +36,7 @@ function sedoo_labtools_scripts() {
     wp_register_style( 'prefix-style', plugins_url('css/sedoo_labtools.css', __FILE__) );
     wp_enqueue_style( 'prefix-style' );
 }
-// add_action('wp_enqueue_scripts','sedoo_labtools_scripts');
+ add_action('wp_enqueue_scripts','sedoo_labtools_scripts');
 
 // Prepare activation for thumbnail support for CPT
 $thumbnailSupport=array();
@@ -76,6 +76,9 @@ if ( get_field('sedoo-axe-tag', 'option') == 1) {
 }
 if ( get_field('sedoo-project-tag', 'option') == 1) {
     include 'taxonomies/sedooProjectTag.php';
+}
+if ( get_field('sedoo-ano-tag', 'option') == 1) {
+    include 'taxonomies/sedooAnoTag.php';
 }
 
 // Active thumbnail support

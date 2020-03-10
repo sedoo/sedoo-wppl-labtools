@@ -212,6 +212,35 @@ function sedoo_project_tag_is_template( $template_path ){
     return false;
 }
 
+/**  REGISTER TAXONOMY TPL FOR ANO TAG */
+
+add_filter('template_include', 'sedoo_ano_tag_set_template');
+function sedoo_ano_tag_set_template( $template ){
+
+    //Add option for plugin to turn this off? If so just return $template
+
+    //Check if the taxonomy is being viewed 
+    //Suggested: check also if the current template is 'suitable'
+
+    if( is_tax('sedoo-ano-tag') && !sedoo_ano_tag_is_template($template))
+        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-ano-tag.php';
+
+    return $template;
+}
+
+function sedoo_ano_tag_is_template( $template_path ){
+
+    //Get template name
+    $template = basename($template_path);
+
+    //Check if template is taxonomy-sedoo-ano-tag.php
+    //Check if template is taxonomy-sedoo-ano-tag-{term-slug}.php
+    if( 1 == preg_match('/^taxonomy-sedoo-ano-tag((-(\S*))?).php/',$template) )
+         return true;
+
+    return false;
+}
+
 function sedoo_labtools_relatedBlock_render_callback( $block ) {
 	
 	// convert name ("acf/testimonial") into path friendly slug ("testimonial")
@@ -286,13 +315,12 @@ function sedoo_labtools_get_associate_content($parameters, $args, $type_of_conte
     // The Loop
     if ( $the_query->have_posts() ) {
 		echo '<h2>'.__( $parameters['sectionTitle'], 'sedoo-wppl-labtools' ).'</h2>';
-		echo '<section role="listNews" class="post-wrapper">';
+		echo '<section role="listNews" class="post-wrapper sedoo-labtools-listCPT">';
         while ( $the_query->have_posts() ) {
 			$the_query->the_post();
 
-			$titleItem=mb_strimwidth(get_the_title(), 0, 65, '...');  
-            // include ( get_template_directory() . '/template-parts/content.php'. get_post_type());
-            get_template_part( 'template-parts/content', get_post_type() );
+			$titleItem=mb_strimwidth(get_the_title(), 0, 65, '...');
+            include('template-parts/content-sedoo-cpt.php');
         }
 		echo '</section>';
         /* Restore original Post Data */
