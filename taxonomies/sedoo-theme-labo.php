@@ -5,7 +5,7 @@
  * for use with 'pages', 'post', 'sedoo-platform', 'sedoo-research-team'.
  */
 function sedoo_theme_labo_init() {
-	register_taxonomy( 'sedoo-theme-labo', array( 'page', 'post', 'sedoo-platform', 'sedoo-research-team', 'sedoo-axe', 'sedoo-project', 'sedoo-sno' ), array(
+	register_taxonomy( 'sedoo-theme-labo', array( 'page', 'post', 'sedoo-platform', 'sedoo-research-team', 'sedoo-axe', 'sedoo-project', 'sedoo-sno', 'user' ), array(
 		'hierarchical'      => true,
 		'public'            => true,
 		'show_in_nav_menus' => true,
@@ -18,7 +18,8 @@ function sedoo_theme_labo_init() {
 			'manage_terms'  => 'edit_posts',
 			'edit_terms'    => 'edit_posts',
 			'delete_terms'  => 'edit_posts',
-			'assign_terms'  => 'edit_posts',
+			// 'assign_terms'  => 'edit_posts',
+			'assign_terms'  => 'read',    // Allow subscribers to add their team in their user profile
 		),
 		'labels'            => array(
 			'name'                       => __( 'Themes', 'sedoo-wppl-labtools' ),

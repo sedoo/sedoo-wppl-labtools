@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="440px"
+	 height="240px" viewBox="0 0 440 240" enable-background="new 0 0 440 240" xml:space="preserve">
+<g id="layout">
+</g>
+<g id="nav__x2B__footer">
+	<rect fill="#F2F2F2" width="440" height="240"/>
+	<g>
+		<g>
+			<rect x="115" y="15" fill="none" width="210" height="210"/>
+		</g>
+	</g>
+	<g>
+		<path fill="#9D9FA2" d="M158.69,158.4c-10.69,0-19.39-8.7-19.39-19.39v-38.02c0-10.69,8.7-19.39,19.39-19.39h38.02
+			c10.69,0,19.39,8.7,19.39,19.39v38.02c0,10.69-8.7,19.39-19.39,19.39H158.69z"/>
+	</g>
+	<path fill="#9D9FA2" d="M297.69,196.74c0,4.64-3.76,8.4-8.4,8.4H269.8c-4.64,0-8.4-3.76-8.4-8.4v-19.49c0-4.64,3.76-8.4,8.4-8.4
+		h19.49c4.64,0,8.4,3.76,8.4,8.4V196.74z"/>
+	<path fill="#9D9FA2" d="M297.69,62.75c0,4.64-3.76,8.4-8.4,8.4H269.8c-4.64,0-8.4-3.76-8.4-8.4V43.26c0-4.64,3.76-8.4,8.4-8.4
+		h19.49c4.64,0,8.4,3.76,8.4,8.4V62.75z"/>
+	<path fill="#9D9FA2" d="M297.69,129.75c0,4.64-3.76,8.4-8.4,8.4H269.8c-4.64,0-8.4-3.76-8.4-8.4v-19.49c0-4.64,3.76-8.4,8.4-8.4
+		h19.49c4.64,0,8.4,3.76,8.4,8.4V129.75z"/>
+	<g>
+		<path fill="#9D9FA2" d="M242.77,57.01h12.63v-8h-16.63c-2.21,0-4,1.79-4,4V116H222.1v8h12.67v62.99c0,2.21,1.79,4,4,4h16.63v-8
+			h-12.63V124h12.63v-8h-12.63V57.01z"/>
+	</g>
+</g>
+<g id="Menu_ouvert">
+</g>
+</svg>
