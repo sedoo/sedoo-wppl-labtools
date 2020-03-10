@@ -25,10 +25,10 @@ while ( have_posts() ) : the_post();
    }
    $themes = get_the_terms( $post->ID, 'sedoo-theme-labo');  
 $themeSlugRewrite = "sedoo-theme-labo";
+
+
 ?>
-<div id="content-area" class="wrapper">
-   <main id="main" class="site-main">
-      <?php
+<?php
       if (get_the_post_thumbnail()) {
       ?>
             <header id="cover">
@@ -37,7 +37,34 @@ $themeSlugRewrite = "sedoo-theme-labo";
       <?php 
       }
       ?>
+      
+<div id="content-area" class="wrapper<?php if (get_field( 'table_content' )) {echo " tocActive";}?>">
+
+   <?php // table_content ( value )
+      if (get_field( 'table_content' )):
+      ?>
+      <aside id="stickyMenu" class="open">
+         <div>
+               <p>Sommaire</p>
+               <nav role="sommaire">
+                  <ol id="tocList">
+                     
+                  </ol>
+               </nav>
+               <!-- <button class="bobinette">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
+                           <rect fill="none" width="30" height="30"/>
+                           <polyline points="
+                           10.71,2.41 23.29,15 10.71,27.59 	"/>
+                  </svg> 
+               </button> -->
+         </div>
+      </aside>
+      <?php endif; ?>
+   <main id="main" class="site-main">
+      
       <div class="wrapper-content">
+      
       <?php
       // sedoo_labtools_show_categories($themes, $themeSlugRewrite);
       include( get_template_directory() . '/template-parts/content-page.php' );
@@ -46,27 +73,7 @@ $themeSlugRewrite = "sedoo-theme-labo";
       ?>
 		</div>
 	</main><!-- #main -->
-   <?php // table_content ( value )
-   if (get_field( 'table_content' )):
-   ?>
-   <aside id="stickyMenu" class="open">
-      <div>
-            <p>Sommaire</p>
-            <nav role="sommaire">
-               <ol id="tocList">
-                  
-               </ol>
-            </nav>
-            <button class="bobinette">
-               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
-                        <rect fill="none" width="30" height="30"/>
-                        <polyline points="
-                        10.71,2.41 23.29,15 10.71,27.59 	"/>
-               </svg> 
-            </button>
-      </div>
-   </aside>
-   <?php endif; ?>
+   
 </div><!-- #primary -->
 <?php
 endwhile; // End of the loop.
