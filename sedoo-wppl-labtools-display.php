@@ -319,8 +319,12 @@ function sedoo_labtools_get_associate_content($parameters, $args, $type_of_conte
         while ( $the_query->have_posts() ) {
 			$the_query->the_post();
 
-			$titleItem=mb_strimwidth(get_the_title(), 0, 65, '...');
+            $titleItem=mb_strimwidth(get_the_title(), 0, 65, '...');
+            if (get_post_type()== "post") {
+                get_template_part( 'template-parts/content', get_post_type() );
+            } else {
             include('template-parts/content-sedoo-cpt.php');
+            }
         }
 		echo '</section>';
         /* Restore original Post Data */
