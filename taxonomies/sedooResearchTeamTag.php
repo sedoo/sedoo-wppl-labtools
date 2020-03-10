@@ -5,7 +5,7 @@
  * for use with 'post', 'sedoo-research-team'.
  */
 function sedoo_research_team_tag_init() {
-	register_taxonomy( 'sedoo-research-team-tag', array( 'post', 'page', 'sedoo-research-team', 'sedoo-project' ), array(
+	register_taxonomy( 'sedoo-research-team-tag', array( 'post', 'page', 'sedoo-research-team', 'sedoo-project', 'sedoo-sno', 'user' ), array(
 		'hierarchical'      => true,
 		'public'            => true,
 		'show_in_nav_menus' => true,
@@ -18,7 +18,8 @@ function sedoo_research_team_tag_init() {
 			'manage_terms'  => 'edit_posts',
 			'edit_terms'    => 'edit_posts',
 			'delete_terms'  => 'edit_posts',
-			'assign_terms'  => 'edit_posts',
+			// 'assign_terms'  => 'edit_posts',
+			'assign_terms'  => 'read',    // Allow subscribers to add their team in their user profile
 		),
 		'labels'            => array(
 			'name'                       => __( 'Research Team Tags', 'sedoo-wppl-labtools' ),
@@ -50,7 +51,7 @@ function sedoo_research_team_tag_init() {
 	) );
 
 }
-add_action( 'init', 'sedoo_research_team_tag_init' );
+add_action( 'init', 'sedoo_research_team_tag_init',0 );
 
 /**
  * Sets the post updated messages for the `sedoo-research-team-tag` taxonomy.

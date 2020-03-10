@@ -47,15 +47,15 @@ function sedoo_labtools_register_acf_block_types() {
     ));
 
     // register Post block.
-    acf_register_block_type(array(
-        'name'              => 'sedoo_labtools_relatedBlock',
-        'title'             => __('Post Block'),
-        'description'       => __('Ajout de contenus en relation.'),
-        'render_callback'	=> 'sedoo_labtools_relatedBlock_render_callback',
-        'category'          => 'widgets',
-        'icon'              => 'category',
-        'keywords'          => array( 'équipe', 'plateforme' ),
-    ));
+    // acf_register_block_type(array(
+    //     'name'              => 'sedoo_labtools_relatedBlock',
+    //     'title'             => __('Post Block'),
+    //     'description'       => __('Ajout de contenus en relation.'),
+    //     'render_callback'	=> 'sedoo_labtools_relatedBlock_render_callback',
+    //     'category'          => 'widgets',
+    //     'icon'              => 'category',
+    //     'keywords'          => array( 'équipe', 'plateforme' ),
+    // ));
 }
 
 // Check if function exists and hook into setup.
