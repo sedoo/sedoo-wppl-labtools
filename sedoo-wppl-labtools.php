@@ -7,7 +7,7 @@
  * Author URI:      https://www.sedoo.fr 
  * Text Domain:     sedoo-wppl-labtools
  * Domain Path:     /languages
- * Version:         0.7.2
+ * Version:         0.7.4
  * GitHub Plugin URI: sedoo/sedoo-wppl-labtools
  * GitHub Branch:     master
  * @package         Sedoo_Wppl_Labtools
