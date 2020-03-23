@@ -52,9 +52,6 @@ if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'sedoo_labtools_register_acf_block_types');
 }
 
-
-
-
 /**
  * Charger dynamiquement les choix du menu déroulant
  * Filtre : acf/load_field
@@ -106,5 +103,8 @@ function sedoo_labtools_acf_populate_taxonomies($field) {
 	return $field;
 }
 add_filter('acf/load_field/name=relatedContentTaxonomies', 'sedoo_labtools_acf_populate_taxonomies');
+// if (get_field_object('labstools_choose_taxonomy')){
+add_filter('acf/load_field/name=labstools_choose_taxonomy', 'sedoo_labtools_acf_populate_taxonomies');
+// }
 
 ?>

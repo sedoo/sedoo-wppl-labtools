@@ -188,8 +188,6 @@ if( function_exists('acf_add_local_field_group') ):
                     'feedzy_categories' => 'Feed Categories',
                     'sedoo-platform' => 'Plateformes',
                     'sedoo-research-team' => 'Équipes de recherche',
-                    'aeris-team' => 'Equipes',
-                    'aeris-member' => 'Membres',
                 ),
                 'default_value' => array(
                 ),
@@ -262,8 +260,6 @@ if( function_exists('acf_add_local_field_group') ):
                     'feedzy_categories' => 'Feed Categories',
                     'sedoo-platform' => 'Plateformes',
                     'sedoo-research-team' => 'Équipes de recherche',
-                    'aeris-team' => 'Equipes',
-                    'aeris-member' => 'Membres',
                 ),
                 'default_value' => array(
                 ),
@@ -336,8 +332,6 @@ if( function_exists('acf_add_local_field_group') ):
                     'feedzy_categories' => 'Feed Categories',
                     'sedoo-platform' => 'Plateformes',
                     'sedoo-research-team' => 'Équipes de recherche',
-                    'aeris-team' => 'Equipes',
-                    'aeris-member' => 'Membres',
                 ),
                 'default_value' => array(
                 ),
@@ -410,8 +404,6 @@ if( function_exists('acf_add_local_field_group') ):
                     'feedzy_categories' => 'Feed Categories',
                     'sedoo-platform' => 'Plateformes',
                     'sedoo-research-team' => 'Équipes de recherche',
-                    'aeris-team' => 'Equipes',
-                    'aeris-member' => 'Membres',
                 ),
                 'default_value' => array(
                 ),
@@ -555,8 +547,6 @@ if( function_exists('acf_add_local_field_group') ):
                     'feedzy_categories' => 'Feed Categories',
                     'sedoo-platform' => 'Plateformes',
                     'sedoo-research-team' => 'Équipes de recherche',
-                    'aeris-team' => 'Equipes',
-                    'aeris-member' => 'Membres',
                 ),
                 'default_value' => array(
                 ),
@@ -657,5 +647,130 @@ if( function_exists('acf_add_local_field_group') ):
         'description' => '',
     ));
     
+    /***** SIDEBAR OPTIONS */
+    
+    acf_add_local_field_group(array(
+        'key' => 'group_5e78d1e1425f1',
+        'title' => 'Labtools sidebar',
+        'fields' => array(
+            array(
+                'key' => 'field_5e78d329682e1',
+                'label' => 'Show sidebar',
+                'name' => 'labstools_show_sidebar',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
+            array(
+                'key' => 'field_5e78d36eb639f',
+                'label' => 'Display taxonomies',
+                'name' => 'labstools_display_taxonomies',
+                'type' => 'repeater',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5e78d329682e1',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'collapsed' => '',
+                'min' => 0,
+                'max' => 0,
+                'layout' => 'table',
+                'button_label' => '',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_5e78d5da3152f',
+                        'label' => 'Section title',
+                        'name' => 'labstools_taxonomysection_title',
+                        'type' => 'text',
+                        'instructions' => 'If empty, the name of taxnomy will be use as default',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_5e78d38fb63a0',
+                        'label' => 'Choose taxonomy',
+                        'name' => 'labstools_choose_taxonomy',
+                        'type' => 'select',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'choices' => array(
+                            'sedoo-research-team-tag' => 'Research Team Tags',
+                            'sedoo-theme-labo' => 'Thématiques',
+                            'sedoo-platform-tag' => 'Platform Tags',
+                            'sedoo-axe-tag' => 'axe Tags',
+                            'sedoo-project-tag' => 'Project Tags',
+                            'sedoo-ano-tag' => 'ano Tags',
+                            'tribe_events_cat' => 'Catégories d’Évènement',
+                        ),
+                        'default_value' => array(
+                        ),
+                        'allow_null' => 0,
+                        'multiple' => 0,
+                        'ui' => 0,
+                        'return_format' => 'value',
+                        'ajax' => 0,
+                        'placeholder' => '',
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'post',
+                ),
+            ),
+        ),
+        'menu_order' => 20,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
+    
+
     endif;
 ?>

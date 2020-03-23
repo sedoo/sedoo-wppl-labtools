@@ -21,8 +21,8 @@ function sedoo_ano_tag_init() {
 			'assign_terms'  => 'edit_posts',
 		),
 		'labels'            => array(
-			'name'                       => __( 'ano Tags', 'sedoo-wppl-labtools' ),
-			'singular_name'              => _x( 'ano Tag', 'taxonomy general name', 'sedoo-wppl-labtools' ),
+			'name'                       => __( 'Actions Nationales pour l\'Observation', 'sedoo-wppl-labtools' ),
+			'singular_name'              => _x( 'Action Nationale pour l\'Observation', 'taxonomy general name', 'sedoo-wppl-labtools' ),
 			'search_items'               => __( 'Search ano Tags', 'sedoo-wppl-labtools' ),
 			'popular_items'              => __( 'Popular ano Tags', 'sedoo-wppl-labtools' ),
 			'all_items'                  => __( 'All ano Tags', 'sedoo-wppl-labtools' ),
