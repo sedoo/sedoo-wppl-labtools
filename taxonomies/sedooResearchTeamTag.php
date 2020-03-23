@@ -22,8 +22,8 @@ function sedoo_research_team_tag_init() {
 			'assign_terms'  => 'read',    // Allow subscribers to add their team in their user profile
 		),
 		'labels'            => array(
-			'name'                       => __( 'Research Team Tags', 'sedoo-wppl-labtools' ),
-			'singular_name'              => _x( 'Research Team Tag', 'taxonomy general name', 'sedoo-wppl-labtools' ),
+			'name'                       => __( 'Research Teams', 'sedoo-wppl-labtools' ),
+			'singular_name'              => _x( 'Research Team', 'taxonomy general name', 'sedoo-wppl-labtools' ),
 			'search_items'               => __( 'Search Research Team Tags', 'sedoo-wppl-labtools' ),
 			'popular_items'              => __( 'Popular Research Team Tags', 'sedoo-wppl-labtools' ),
 			'all_items'                  => __( 'All Research Team Tags', 'sedoo-wppl-labtools' ),
