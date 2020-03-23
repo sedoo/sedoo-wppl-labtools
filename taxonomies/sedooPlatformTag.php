@@ -21,7 +21,7 @@ function sedoo_platform_tag_init() {
 			'assign_terms'  => 'edit_posts',
 		),
 		'labels'            => array(
-			'name'                       => __( 'Platform Tags', 'sedoo-wppl-labtools' ),
+			'name'                       => __( 'Platforms Tags', 'sedoo-wppl-labtools' ),
 			'singular_name'              => _x( 'Platform Tag', 'taxonomy general name', 'sedoo-wppl-labtools' ),
 			'search_items'               => __( 'Search Platform Tags', 'sedoo-wppl-labtools' ),
 			'popular_items'              => __( 'Popular Platform Tags', 'sedoo-wppl-labtools' ),

@@ -21,8 +21,8 @@ function sedoo_axe_tag_init() {
 			'assign_terms'  => 'edit_posts',
 		),
 		'labels'            => array(
-			'name'                       => __( 'axe Tags', 'sedoo-wppl-labtools' ),
-			'singular_name'              => _x( 'axe Tag', 'taxonomy general name', 'sedoo-wppl-labtools' ),
+			'name'                       => __( 'Axes transverses', 'sedoo-wppl-labtools' ),
+			'singular_name'              => _x( 'Axe transverse', 'taxonomy general name', 'sedoo-wppl-labtools' ),
 			'search_items'               => __( 'Search axe Tags', 'sedoo-wppl-labtools' ),
 			'popular_items'              => __( 'Popular axe Tags', 'sedoo-wppl-labtools' ),
 			'all_items'                  => __( 'All axe Tags', 'sedoo-wppl-labtools' ),
