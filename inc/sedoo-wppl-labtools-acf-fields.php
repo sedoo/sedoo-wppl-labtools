@@ -646,6 +646,50 @@ if( function_exists('acf_add_local_field_group') ):
         'active' => true,
         'description' => '',
     ));
+
+    // BLOCKS : Related content block
+    acf_add_local_field_group(array(
+        'key' => 'group_5e81cd027c36b',
+        'title' => 'Activation du bloc \'Related contents\'',
+        'fields' => array(
+            array(
+                'key' => 'field_5e81cfee2629d',
+                'label' => 'Activation',
+                'name' => 'sedoo_labtools_activaterelatedcontentblock',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'acf-options-related-content-block-settings',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
     
     /***** SIDEBAR OPTIONS */
     
@@ -771,6 +815,6 @@ if( function_exists('acf_add_local_field_group') ):
         'description' => '',
     ));
     
-
+   
     endif;
 ?>
