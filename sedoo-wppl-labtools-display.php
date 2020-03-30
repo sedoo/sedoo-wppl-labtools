@@ -257,80 +257,82 @@ function sedoo_labtools_relatedBlock_render_callback( $block ) {
  * Prepare WP_Query for related content 
  * 
  */
-function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset) {
-     
-    $categories_field = get_the_terms( get_the_id(), $taxonomy);  // recup des terms de la taxonomie $parameters['category']
-    $terms_fields=array();
-    if (is_array($categories_field) || is_object($categories_field))
-    {
-        foreach ($categories_field as $term_slug) {        
-            array_push($terms_fields, $term_slug->slug);
-        }
-    }
-
-    $parameters = array(
-    'sectionTitle'    => $title,
-    );
-    if (function_exists('pll_current_language')) {
-        $lang = pll_current_language();
-    }
-
-    if ($type_of_content== 'post') {
-        $orderby = 'date';
-        $order = 'DESC';
-    } else {
-        $orderby = 'title';
-        $order = 'ASC';
-    }
-
-    $args = array(
-    'post_type'             => $type_of_content,
-    'post_status'           => array( 'publish' ),
-    'posts_per_page'        => $post_number,            // -1 no limit
-    'orderby'               => $orderby,
-    'order'                 => $order,
-    'lang'			        => $lang,
-    'tax_query'             => array(
-                            array(
-                                'taxonomy' => $taxonomy,
-                                'field'    => 'slug',
-                                'terms'    => $terms_fields,
-                            ),
-                            ),
-    );
-    //exclude current post if not archive template
-    if (!is_archive()) {
-        $args['post__not_in']=array(get_the_id());
-    }
-
-    sedoo_labtools_get_associate_content($parameters, $args, $type_of_content);
-}
-
-/**
- * Show related content
- * 
- */
-function sedoo_labtools_get_associate_content($parameters, $args, $type_of_content) {
-    $the_query = new WP_Query( $args );
-    // The Loop
-    if ( $the_query->have_posts() ) {
-		echo '<h2>'.__( $parameters['sectionTitle'], 'sedoo-wppl-labtools' ).'</h2>';
-		echo '<section role="listNews" class="post-wrapper sedoo-labtools-listCPT">';
-        while ( $the_query->have_posts() ) {
-			$the_query->the_post();
-
-            $titleItem=mb_strimwidth(get_the_title(), 0, 65, '...');
-            if (get_post_type()== "post") {
-                get_template_part( 'template-parts/content', get_post_type() );
-            } else {
-            include('template-parts/content-sedoo-cpt.php');
+if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
+    function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset) {
+        
+        $categories_field = get_the_terms( get_the_id(), $taxonomy);  // recup des terms de la taxonomie $parameters['category']
+        $terms_fields=array();
+        if (is_array($categories_field) || is_object($categories_field))
+        {
+            foreach ($categories_field as $term_slug) {        
+                array_push($terms_fields, $term_slug->slug);
             }
         }
-		echo '</section>';
-        /* Restore original Post Data */
-        wp_reset_postdata();
-    } else {
-        // no posts found
+
+        $parameters = array(
+        'sectionTitle'    => $title,
+        );
+        if (function_exists('pll_current_language')) {
+            $lang = pll_current_language();
+        }
+
+        if ($type_of_content== 'post') {
+            $orderby = 'date';
+            $order = 'DESC';
+        } else {
+            $orderby = 'title';
+            $order = 'ASC';
+        }
+
+        $args = array(
+        'post_type'             => $type_of_content,
+        'post_status'           => array( 'publish' ),
+        'posts_per_page'        => $post_number,            // -1 no limit
+        'orderby'               => $orderby,
+        'order'                 => $order,
+        'lang'			        => $lang,
+        'tax_query'             => array(
+                                array(
+                                    'taxonomy' => $taxonomy,
+                                    'field'    => 'slug',
+                                    'terms'    => $terms_fields,
+                                ),
+                                ),
+        );
+        //exclude current post if not archive template
+        if (!is_archive()) {
+            $args['post__not_in']=array(get_the_id());
+        }
+
+        sedoo_labtools_get_associate_content($parameters, $args, $type_of_content);
+    }
+
+    /**
+     * Show related content
+     * 
+     */
+    function sedoo_labtools_get_associate_content($parameters, $args, $type_of_content) {
+        $the_query = new WP_Query( $args );
+        // The Loop
+        if ( $the_query->have_posts() ) {
+            echo '<h2>'.__( $parameters['sectionTitle'], 'sedoo-wppl-labtools' ).'</h2>';
+            echo '<section role="listNews" class="post-wrapper sedoo-labtools-listCPT">';
+            while ( $the_query->have_posts() ) {
+                $the_query->the_post();
+
+                $titleItem=mb_strimwidth(get_the_title(), 0, 65, '...');
+                if (get_post_type()== "post") {
+                    get_template_part( 'template-parts/content', get_post_type() );
+                } else {
+                include('template-parts/content-sedoo-cpt.php');
+                }
+            }
+            echo '</section>';
+            /* Restore original Post Data */
+            wp_reset_postdata();
+        } else {
+            // no posts found
+        }
     }
 }
 ?>
