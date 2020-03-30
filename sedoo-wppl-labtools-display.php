@@ -107,7 +107,7 @@ function sedoo_theme_labo_set_template( $template ){
     //Suggested: check also if the current template is 'suitable'
 
     if( is_tax('sedoo-theme-labo') && !sedoo_theme_labo_is_template($template))
-        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-theme-labo.php';
+        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-labtools.php';
 
     return $template;
 }
@@ -136,7 +136,7 @@ function sedoo_platform_tag_set_template( $template ){
     //Suggested: check also if the current template is 'suitable'
 
     if( is_tax('sedoo-platform-tag') && !sedoo_platform_tag_is_template($template))
-        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-platform-tag.php';
+        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-labtools.php';
 
     return $template;
 }
@@ -165,7 +165,7 @@ function sedoo_axe_tag_set_template( $template ){
     //Suggested: check also if the current template is 'suitable'
 
     if( is_tax('sedoo-axe-tag') && !sedoo_axe_tag_is_template($template))
-        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-axe-tag.php';
+        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-labtools.php';
 
     return $template;
 }
@@ -194,7 +194,7 @@ function sedoo_project_tag_set_template( $template ){
     //Suggested: check also if the current template is 'suitable'
 
     if( is_tax('sedoo-project-tag') && !sedoo_project_tag_is_template($template))
-        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-project-tag.php';
+        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-labtools.php';
 
     return $template;
 }
@@ -223,7 +223,7 @@ function sedoo_ano_tag_set_template( $template ){
     //Suggested: check also if the current template is 'suitable'
 
     if( is_tax('sedoo-ano-tag') && !sedoo_ano_tag_is_template($template))
-        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-ano-tag.php';
+        $template = plugin_dir_path(__FILE__ ).'taxonomy-sedoo-labtools.php';
 
     return $template;
 }
@@ -260,7 +260,8 @@ function sedoo_labtools_relatedBlock_render_callback( $block ) {
 if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
     function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset) {
         
-        $categories_field = get_the_terms( get_the_id(), $taxonomy);  // recup des terms de la taxonomie $parameters['category']
+        $categories_field = get_the_terms( get_the_id(), $taxonomy);  // recup des terms de la taxonomie $taxonomy
+        // var_dump($categories_field);
         $terms_fields=array();
         if (is_array($categories_field) || is_object($categories_field))
         {
@@ -268,7 +269,8 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
                 array_push($terms_fields, $term_slug->slug);
             }
         }
-
+        // echo "<hr>YOOO";
+        // var_dump($terms_fields);
         $parameters = array(
         'sectionTitle'    => $title,
         );
@@ -282,6 +284,10 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         } else {
             $orderby = 'title';
             $order = 'ASC';
+        }
+
+        if (is_archive()) {
+            $terms_fields = get_query_var( $taxonomy );
         }
 
         $args = array(
