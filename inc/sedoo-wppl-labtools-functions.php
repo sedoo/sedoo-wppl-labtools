@@ -96,3 +96,32 @@ function sedoo_labtools_filter_by_custom_taxonomies( $post_type, $which ) {
     }
 }
 add_action( 'restrict_manage_posts', 'sedoo_labtools_filter_by_custom_taxonomies' , 10, 2);
+
+function sedoo_labtools_display_sommaire($titre) {
+    ?>
+    <aside id="stickyMenu" class="open">
+        <div>
+               <p><?php echo $titre; ?></p>
+               <nav role="sommaire">
+                  <ol id="tocList">
+                     
+                  </ol>
+               </nav>
+        </div>
+    </aside>
+    <?php 
+}
+
+function sedoo_labtools_test_if_post_thumbnail_and_display() {
+    if (get_the_post_thumbnail()) {
+    ?>
+    <header id="cover">
+        <?php the_post_thumbnail(); ?>
+    </header>
+    <?php 
+    }
+}
+
+function sedoo_labtools_display_title_on_top_on_mobile() {
+    echo '<h1 class="onTop">'.get_the_title().'</h1>';
+}
