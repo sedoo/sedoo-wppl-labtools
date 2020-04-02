@@ -292,7 +292,10 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         } else {
             // If archive, get only term slug , not post ID! 
             $term = get_queried_object();
-            array_push($terms_fields, $term->slug);
+            // var_dump($term);
+            // array_push($terms_fields, $term->slug);
+            $terms_fields = $term->slug;
+            var_dump($terms_fields);
         }
 
         $args = array(
