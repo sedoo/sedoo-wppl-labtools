@@ -260,22 +260,13 @@ function sedoo_labtools_relatedBlock_render_callback( $block ) {
 if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
     function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset) {
         
-        $categories_field = get_the_terms( get_the_id(), $taxonomy);  // recup des terms de la taxonomie $taxonomy
-        // var_dump($categories_field);
-        $terms_fields=array();
-        if (is_array($categories_field) || is_object($categories_field))
-        {
-            foreach ($categories_field as $term_slug) {        
-                array_push($terms_fields, $term_slug->slug);
-            }
-        }
-        // echo "<hr>YOOO";
-        // var_dump($terms_fields);
         $parameters = array(
-        'sectionTitle'    => $title,
-        );
+            'sectionTitle'    => $title,
+            );
         if (function_exists('pll_current_language')) {
             $lang = pll_current_language();
+        } else {
+            $lang = 'fr';
         }
 
         if ($type_of_content== 'post') {
@@ -286,8 +277,22 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
             $order = 'ASC';
         }
 
-        if (is_archive()) {
-            $terms_fields = get_query_var( $taxonomy );
+        $terms_fields=array();
+        
+        if (!is_archive()) {
+            $args['post__not_in']=array(get_the_id()); //exclude current post if not archive template
+
+            $categories_field = get_the_terms( get_the_id(), $taxonomy);  // get terms of taxonomy
+            if (is_array($categories_field) || is_object($categories_field))
+            {
+            foreach ($categories_field as $term_slug) {        
+                array_push($terms_fields, $term_slug->slug);
+                }
+            }
+        } else {
+            // If archive, get only term slug , not post ID! 
+            $term = get_queried_object();
+            array_push($terms_fields, $term->slug);
         }
 
         $args = array(

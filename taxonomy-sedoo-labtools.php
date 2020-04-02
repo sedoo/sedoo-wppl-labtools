@@ -12,7 +12,6 @@ get_header();
 // recup le slug de la taxonomie du term courant
 $term = get_queried_object();
 $taxonomy = $term->taxonomy;
-
 ?>
 
 <div class="site-branding" 
