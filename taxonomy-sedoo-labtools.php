@@ -132,7 +132,7 @@ $taxonomy = $term->taxonomy;
 
         //sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset)
         foreach ($whatToShow as $display) {
-            echo "<div style=\"font-size:.9rem;color:#AAA;\">Mode DEBUG : labtools_archive_ctx :<br>".
+            echo "<div style=\"font-size:.9rem;color:#AAA;\">Mode DEBUG Mode DEBUG WORK IN PROGRESS: labtools_archive_ctx :<br>".
             "<p>TAXONOMY : <br>";
             var_dump($display['taxonomy']);
             echo "</p></div><hr>";

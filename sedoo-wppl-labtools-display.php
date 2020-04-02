@@ -311,7 +311,7 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
                                 ),
         );
 
-        echo "<div style=\"font-size:.9rem;color:#AAA;\">Mode DEBUG : labtools_display".
+        echo "<div style=\"font-size:.9rem;color:#AAA;\">Mode DEBUG WORK IN PROGRESS: labtools_display".
         "<p>TAXONOMY : <br>";
         var_dump($taxonomy);
         echo "</p>".
@@ -328,7 +328,9 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         var_dump($type_of_content);
         echo "</p>".
         "</div>";
+        if(function_exists('sedoo_labtools_get_associate_content')) {
         sedoo_labtools_get_associate_content($parameters, $args, $type_of_content);
+        } else { echo "Function sedoo_labtools_get_associate_content doesn't exist !! ";}
     }
 
     /**
@@ -338,6 +340,9 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
     function sedoo_labtools_get_associate_content($parameters, $args, $type_of_content) {
         $the_query = new WP_Query( $args );
         // The Loop
+        echo "<div style=\"font-size:.9rem;color:#AAA;\">Mode DEBUG WORK IN PROGRESS: function sedoo_labtools_get_associate_content".
+        "<p>the Query  : <br>";
+        var_dump($the_query);
         if ( $the_query->have_posts() ) {
             echo '<h2>'.__( $parameters['sectionTitle'], 'sedoo-wppl-labtools' ).'</h2>';
             echo '<section role="listNews" class="post-wrapper sedoo-labtools-listCPT">';
