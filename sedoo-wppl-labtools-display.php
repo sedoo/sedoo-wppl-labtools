@@ -310,11 +310,15 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
                                 ),
                                 ),
         );
-        //exclude current post if not archive template
-        if (!is_archive()) {
-            $args['post__not_in']=array(get_the_id());
-        }
 
+        echo "<div style=\"font-size:.9rem;color:#AAA;\">Mode DEBUG : labtools_display".
+        "<p>TAXONOMY : <br>";
+        var_dump($taxonomy);
+        echo "</p>".
+        "<p>TERMS_FIELDS : <br>";
+        var_dump($terms_fields);
+        echo "</p>".
+        "</div>";
         sedoo_labtools_get_associate_content($parameters, $args, $type_of_content);
     }
 

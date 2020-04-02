@@ -25,7 +25,38 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'Custom Taxonomies ',
 		'parent_slug'	=> 'lab-tools-settings',
     ));	
+    
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'RelatedContent Block',
+		'menu_title'	=> 'Related Content Block settings ',
+		'parent_slug'	=> 'lab-tools-settings',
+	));
 	
+}
+
+
+/**
+ * ACF gutenberg Block
+ */
+
+function sedoo_labtools_register_acf_block_types() {
+    if ( get_field('sedoo_labtools_activaterelatedcontentblock', 'option') == 1) {
+        // register related block content.
+        acf_register_block_type(array(
+            'name'              => 'sedoo_labtools_relatedBlock',
+            'title'             => __('Related Block'),
+            'description'       => __('Ajout de contenus en relation.'),
+            'render_callback'	=> 'sedoo_labtools_relatedBlock_render_callback',
+            'category'          => 'widgets',
+            'icon'              => 'category',
+            'keywords'          => array( 'équipe', 'plateforme' ),
+        ));
+    }
+}
+
+// Check if function exists and hook into setup.
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', 'sedoo_labtools_register_acf_block_types');
 }
 
 /**
