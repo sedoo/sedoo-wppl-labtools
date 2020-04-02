@@ -40,6 +40,7 @@ $taxonomy = $term->taxonomy;
 		</header><!-- .page-header -->
 		
 		<?php
+
         // SHOW POST
         $defaultListPost = array(
             'title'         => 'News',
@@ -129,8 +130,12 @@ $taxonomy = $term->taxonomy;
                 break;
 		}
 
-		//sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset)
+        //sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset)
         foreach ($whatToShow as $display) {
+            echo "<div style=\"font-size:.9rem;color:#AAA;\">Mode DEBUG : labtools_archive_ctx :<br>".
+            "<p>TAXONOMY : <br>";
+            var_dump($display['taxonomy']);
+            echo "</p></div><hr>";
             sedoo_labtools_get_associate_content_arguments($display['title'], $display['posttype'], $display['taxonomy'], $display['post_number'], $display['post_offset']);
         }
 
