@@ -299,7 +299,6 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         'posts_per_page'        => $post_number,            // -1 no limit
         'orderby'               => $orderby,
         'order'                 => $order,
-        // 'lang'			        => $lang,
         'tax_query'             => array(
                                 array(
                                     'taxonomy' => $taxonomy,

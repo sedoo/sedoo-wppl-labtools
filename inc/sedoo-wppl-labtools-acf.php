@@ -26,11 +26,11 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'lab-tools-settings',
     ));	
     
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'RelatedContent Block',
-		'menu_title'	=> 'Related Content Block settings ',
-		'parent_slug'	=> 'lab-tools-settings',
-	));
+	// acf_add_options_sub_page(array(
+	// 	'page_title' 	=> 'RelatedContent Block',
+	// 	'menu_title'	=> 'Related Content Block settings ',
+	// 	'parent_slug'	=> 'lab-tools-settings',
+	// ));
 	
 }
 
@@ -39,82 +39,82 @@ if( function_exists('acf_add_options_page') ) {
  * ACF gutenberg Block
  */
 
-function sedoo_labtools_register_acf_block_types() {
-    if ( get_field('sedoo_labtools_activaterelatedcontentblock', 'option') == 1) {
-        // register related block content.
-        acf_register_block_type(array(
-            'name'              => 'sedoo_labtools_relatedBlock',
-            'title'             => __('Related Block'),
-            'description'       => __('Ajout de contenus en relation.'),
-            'render_callback'	=> 'sedoo_labtools_relatedBlock_render_callback',
-            'category'          => 'widgets',
-            'icon'              => 'category',
-            'keywords'          => array( 'équipe', 'plateforme' ),
-        ));
-    }
-}
+// function sedoo_labtools_register_acf_block_types() {
+//     if ( get_field('sedoo_labtools_activaterelatedcontentblock', 'option') == 1) {
+//         // register related block content.
+//         acf_register_block_type(array(
+//             'name'              => 'sedoo_labtools_relatedBlock',
+//             'title'             => __('Related Block'),
+//             'description'       => __('Ajout de contenus en relation.'),
+//             'render_callback'	=> 'sedoo_labtools_relatedBlock_render_callback',
+//             'category'          => 'widgets',
+//             'icon'              => 'category',
+//             'keywords'          => array( 'équipe', 'plateforme' ),
+//         ));
+//     }
+// }
 
-// Check if function exists and hook into setup.
-if( function_exists('acf_register_block_type') ) {
-    add_action('acf/init', 'sedoo_labtools_register_acf_block_types');
-}
+// // Check if function exists and hook into setup.
+// if( function_exists('acf_register_block_type') ) {
+//     add_action('acf/init', 'sedoo_labtools_register_acf_block_types');
+// }
 
 /**
  * Charger dynamiquement les choix du menu déroulant
  * Filtre : acf/load_field
  */
-if(!function_exists('sedoo_labtools_acf_populate_post_type')) {
-    function sedoo_labtools_acf_populate_post_type($field) {
+// if(!function_exists('sedoo_labtools_acf_populate_post_type')) {
+//     function sedoo_labtools_acf_populate_post_type($field) {
     
-        $content_type_list = [];
+//         $content_type_list = [];
     
-        $args = array(
-            // 'name' => array('sedoo-platform', 'sedoo-research-team'),
-            // 'labels' => array('Research team', 'Platform'),
-            'public'   => true,
-            '_builtin' => true
-        );
-        $output = 'object'; // names or objects, note names is the default
-        $operator = 'or'; // 'and' or 'or'
+//         $args = array(
+//             // 'name' => array('sedoo-platform', 'sedoo-research-team'),
+//             // 'labels' => array('Research team', 'Platform'),
+//             'public'   => true,
+//             '_builtin' => true
+//         );
+//         $output = 'object'; // names or objects, note names is the default
+//         $operator = 'or'; // 'and' or 'or'
         
-        $post_types = get_post_types( $args, $output, $operator );    
-        foreach ( $post_types as $post_type ) {        
-            // array_push($content_type_list, $post_type->label);
-            $content_type_list[$post_type->name] = $post_type->label;
-         }    
+//         $post_types = get_post_types( $args, $output, $operator );    
+//         foreach ( $post_types as $post_type ) {        
+//             // array_push($content_type_list, $post_type->label);
+//             $content_type_list[$post_type->name] = $post_type->label;
+//          }    
         
-        $field['choices'] = $content_type_list;
-        return $field;
-    }
-    add_filter('acf/load_field/name=relatedContentTypeOfContent', 'sedoo_labtools_acf_populate_post_type');
+//         $field['choices'] = $content_type_list;
+//         return $field;
+//     }
+//     add_filter('acf/load_field/name=relatedContentTypeOfContent', 'sedoo_labtools_acf_populate_post_type');
     
-    function sedoo_labtools_acf_populate_taxonomies($field) {
+//     function sedoo_labtools_acf_populate_taxonomies($field) {
         
-        $taxonomies_list = [];
+//         $taxonomies_list = [];
     
-        $args = array(
-            // 'name' => array('sedoo-platform', 'sedoo-research-team'),
-            // 'labels' => array('Research team', 'Platform'),
-            'public'   => true,
-            '_builtin' => false
-        );
-        $output = 'object'; // names or objects, note names is the default
-        $operator = 'and'; // 'and' or 'or'
+//         $args = array(
+//             // 'name' => array('sedoo-platform', 'sedoo-research-team'),
+//             // 'labels' => array('Research team', 'Platform'),
+//             'public'   => true,
+//             '_builtin' => false
+//         );
+//         $output = 'object'; // names or objects, note names is the default
+//         $operator = 'and'; // 'and' or 'or'
         
-        $taxonomies = get_taxonomies( $args, $output, $operator ); 
-        // $taxonomies = get_taxonomies();
-        foreach ( $taxonomies as $taxonomy ) {
-            $taxonomies_list[$taxonomy->name] = $taxonomy->label;
-        } 
+//         $taxonomies = get_taxonomies( $args, $output, $operator ); 
+//         // $taxonomies = get_taxonomies();
+//         foreach ( $taxonomies as $taxonomy ) {
+//             $taxonomies_list[$taxonomy->name] = $taxonomy->label;
+//         } 
         
-        $field['choices'] = $taxonomies_list;
-        return $field;
-    }
-    add_filter('acf/load_field/name=relatedContentTaxonomies', 'sedoo_labtools_acf_populate_taxonomies');
-    // if (get_field_object('labstools_choose_taxonomy')){
-    add_filter('acf/load_field/name=labstools_choose_taxonomy', 'sedoo_labtools_acf_populate_taxonomies');
-    // }
-}
+//         $field['choices'] = $taxonomies_list;
+//         return $field;
+//     }
+//     add_filter('acf/load_field/name=relatedContentTaxonomies', 'sedoo_labtools_acf_populate_taxonomies');
+//     // if (get_field_object('labstools_choose_taxonomy')){
+//     add_filter('acf/load_field/name=labstools_choose_taxonomy', 'sedoo_labtools_acf_populate_taxonomies');
+//     // }
+// }
 
 
 ?>
