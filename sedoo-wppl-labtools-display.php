@@ -318,6 +318,15 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         "<p>TERMS_FIELDS : <br>";
         var_dump($terms_fields);
         echo "</p>".
+        "<p>PARAMETERS : <br>";
+        var_dump($parameters);
+        echo "</p>".
+        "<p>ARGS : <br>";
+        var_dump($args);
+        echo "</p>".
+        "<p>TYPE OF CONTENT : <br>";
+        var_dump($type_of_content);
+        echo "</p>".
         "</div>";
         sedoo_labtools_get_associate_content($parameters, $args, $type_of_content);
     }
