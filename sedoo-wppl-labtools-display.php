@@ -293,8 +293,8 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
             // If archive, get only term slug , not post ID! 
             $term = get_queried_object();
             // var_dump($term);
-            // array_push($terms_fields, $term->slug);
-            $terms_fields = $term->slug;
+            array_push($terms_fields, $term->slug);
+            // $terms_fields = $term->slug;
             var_dump($terms_fields);
         }
 
@@ -306,11 +306,12 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         'order'                 => $order,
         'lang'			        => $lang,
         'tax_query'             => array(
+                                'relation' => 'OR',
                                 array(
                                     'taxonomy' => $taxonomy,
                                     'field'    => 'slug',
                                     'terms'    => $terms_fields,
-                                ),
+                                    ),
                                 ),
         );
 
@@ -331,9 +332,8 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         var_dump($type_of_content);
         echo "</p>
         </div>";
-        if(function_exists('sedoo_labtools_get_associate_content')) {
+
         sedoo_labtools_get_associate_content($parameters, $args, $type_of_content);
-        } else { echo "Function sedoo_labtools_get_associate_content doesn't exist !! ";}
     }
 
     /**
