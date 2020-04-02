@@ -264,9 +264,7 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
             'sectionTitle'    => $title,
             );
         if (function_exists('pll_current_language')) {
-            $lang = pll_current_language();
-        } else {
-            $lang = 'fr';
+            $args['lang']=pll_current_language();
         }
 
         if ($type_of_content== 'post') {
@@ -301,36 +299,16 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         'posts_per_page'        => $post_number,            // -1 no limit
         'orderby'               => $orderby,
         'order'                 => $order,
-        'lang'			        => $lang,
         'tax_query'             => array(
                                 array(
                                     'taxonomy' => $taxonomy,
                                     'field'    => 'slug',
                                     'terms'    => $terms_fields,
-                                ),
+                                    ),
                                 ),
         );
 
-        echo "<div style=\"font-size:.9rem;color:#AAA;\">Mode DEBUG WORK IN PROGRESS: labtools_display".
-        "<p>TAXONOMY : <br>";
-        var_dump($taxonomy);
-        echo "</p>".
-        "<p>TERMS_FIELDS : <br>";
-        var_dump($terms_fields);
-        echo "</p>".
-        "<p>PARAMETERS : <br>";
-        var_dump($parameters);
-        echo "</p>".
-        "<p>ARGS : <br>";
-        var_dump($args);
-        echo "</p>".
-        "<p>TYPE OF CONTENT : <br>";
-        var_dump($type_of_content);
-        echo "</p>".
-        "</div>";
-        if(function_exists('sedoo_labtools_get_associate_content')) {
         sedoo_labtools_get_associate_content($parameters, $args, $type_of_content);
-        } else { echo "Function sedoo_labtools_get_associate_content doesn't exist !! ";}
     }
 
     /**
@@ -340,9 +318,6 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
     function sedoo_labtools_get_associate_content($parameters, $args, $type_of_content) {
         $the_query = new WP_Query( $args );
         // The Loop
-        echo "<div style=\"font-size:.9rem;color:#AAA;\">Mode DEBUG WORK IN PROGRESS: function sedoo_labtools_get_associate_content".
-        "<p>the Query  : <br>";
-        var_dump($the_query);
         if ( $the_query->have_posts() ) {
             echo '<h2>'.__( $parameters['sectionTitle'], 'sedoo-wppl-labtools' ).'</h2>';
             echo '<section role="listNews" class="post-wrapper sedoo-labtools-listCPT">';
