@@ -95,8 +95,11 @@ $taxonomy = $term->taxonomy;
 				$whatToShow= array(
                     '1' => $defaultListPost,
                     '2' => $defaultListTeam,
-                    '3' => $defaultListAxe,
-                    '4' => $defaultListPlatform,
+                    '3' => $defaultListProject,
+                    '4' => $defaultListSno,
+                    '5' => $defaultListAxe,
+                    '6' => $defaultListPlatform,                   
+                    
                 );
 				break;
             case 'sedoo-axe-tag':
