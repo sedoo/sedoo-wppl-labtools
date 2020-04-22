@@ -133,9 +133,10 @@ $taxonomy = $term->taxonomy;
                 break;
 		}
 
-        //sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset)
+        //sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset, $className)
+        $className="";
         foreach ($whatToShow as $display) {
-            sedoo_labtools_get_associate_content_arguments($display['title'], $display['posttype'], $display['taxonomy'], $display['post_number'], $display['post_offset']);
+            sedoo_labtools_get_associate_content_arguments($display['title'], $display['posttype'], $display['taxonomy'], $display['post_number'], $display['post_offset'], $className);
         }
 
 		?>
