@@ -45,7 +45,7 @@ function sedoo_ano_tag_init() {
 			'back_to_items'              => __( '&larr; Back to ano Tags', 'sedoo-wppl-labtools' ),
 		),
 		'show_in_rest'      => true,
-		'rest_base'         => 'ano-tag',
+		'rest_base'         => 'sedoo-ano-tag',
 		'rest_controller_class' => 'WP_REST_Terms_Controller',
 	) );
 	register_taxonomy_for_object_type( 'sedoo-ano-tag', 'post' );
