@@ -46,7 +46,7 @@ function sedoo_research_team_tag_init() {
 			'back_to_items'              => __( '&larr; Back to Research Team Tags', 'sedoo-wppl-labtools' ),
 		),
 		'show_in_rest'      => true,
-		'rest_base'         => 'research-team-tag',
+		'rest_base'         => 'sedoo-research-team-tag',
 		'rest_controller_class' => 'WP_REST_Terms_Controller',
 	) );
 
