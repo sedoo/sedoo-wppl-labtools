@@ -14,19 +14,22 @@ while ( have_posts() ) : the_post();
          array_push($terms, $term_slug->slug);
       }
    }
-
-   $sedooAnotags = get_the_terms( get_the_id(), 'sedoo-ano-tag');  // recup des terms de la taxonomie $parameters['category']
-   $sedooAnoTerms=array();
-   if (is_array($sedooAnotags) || is_object($sedooAnotags))
-   {
-     foreach ($sedooAnotags as $sedooAnoTerm_slug) {        
-        array_push($sedooAnoTerms, $sedooAnoTerm_slug->slug);
-     }
+   if (taxonomy_exists('sedoo-ano-tag')) {
+      $sedooAnotags = get_the_terms( get_the_id(), 'sedoo-ano-tag');  // recup des terms de la taxonomie $parameters['category']
+      $sedooAnoTerms=array();
+      if (is_array($sedooAnotags) || is_object($sedooAnotags))
+      {
+         foreach ($sedooAnotags as $sedooAnoTerm_slug) {        
+            array_push($sedooAnoTerms, $sedooAnoTerm_slug->slug);
+         }
+      }
+      $anoTagSlugRewrite = "sedoo-ano-tag";
    }
-   $anoTagSlugRewrite = "sedoo-ano-tag";
 
-   $themes = get_the_terms( $post->ID, 'sedoo-theme-labo');  
-$themeSlugRewrite = "sedoo-theme-labo";
+   if (taxonomy_exists('sedoo-theme-labo')) {
+      $themes = get_the_terms( $post->ID, 'sedoo-theme-labo');  
+      $themeSlugRewrite = "sedoo-theme-labo";
+   }
 ?>
 
 <!-- L'AFFICHAGE COMMENCE ICI -->
@@ -48,7 +51,15 @@ if ((get_field( 'table_content' )) && (function_exists('sedoo_wpth_labs_display_
       
       <div class="wrapper-content">
       <div data-role="list-platformTag">
-         <?php sedoo_labtools_show_categories($sedooAnotags, $anoTagSlugRewrite);?>
+      <?php 
+         if ( (function_exists('sedoo_labtools_show_categories')) && ($sedooAnotags)){
+         ?>
+         <div data-role="list-platformTag">
+            <?php sedoo_labtools_show_categories($sedooAnotags, $anoTagSlugRewrite);?>
+         </div>
+         <?php
+         }
+      ?>
       </div>
       <?php
          // sedoo_labtools_show_categories($themes, $themeSlugRewrite);

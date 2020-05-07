@@ -7,10 +7,15 @@ get_header();
 
 while ( have_posts() ) : the_post();
 
-$themes = get_the_terms( $post->ID, 'sedoo-theme-labo');  
-$themeSlugRewrite = "sedoo-theme-labo";
-$platformTag = get_the_terms( $post->ID, 'sedoo-platform-tag');  
-$platformTagSlugRewrite = "sedoo-platform-tag";
+if (taxonomy_exists('sedoo-theme-labo')) {
+   $themes = get_the_terms( $post->ID, 'sedoo-theme-labo');  
+   $themeSlugRewrite = "sedoo-theme-labo";
+}
+if (taxonomy_exists('sedoo-platform-tag')) {
+   $platformTag = get_the_terms( $post->ID, 'sedoo-platform-tag');  
+   $platformTagSlugRewrite = "sedoo-platform-tag";
+}
+
 ?>
 
 <!-- L'AFFICHAGE COMMENCE ICI -->
@@ -31,9 +36,16 @@ if ((get_field( 'table_content' )) && (function_exists('sedoo_wpth_labs_display_
    <main id="main" class="site-main">
       
       <div class="wrapper-content">
-      <div data-role="list-platformTag">
-         <?php sedoo_labtools_show_categories($sedooAnotags, $anoTagSlugRewrite);?>
-      </div>
+      <?php 
+         if ( (function_exists('sedoo_labtools_show_categories')) && ($platformTag)){
+         ?>
+         <div data-role="list-platformTag">
+            <?php sedoo_labtools_show_categories($platformTag, $platformTagSlugRewrite);?>
+         </div>
+         <?php
+         }
+      ?>
+      
       <?php
          // sedoo_labtools_show_categories($themes, $themeSlugRewrite);
          include( get_template_directory() . '/template-parts/content-page.php' );
