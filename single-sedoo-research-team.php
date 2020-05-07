@@ -23,7 +23,7 @@ while ( have_posts() ) : the_post();
         array_push($sedooResearchTeamTerms, $sedooResearchTeamTerm_slug->slug);
      }
    }
-   $themes = get_the_terms( $post->ID, 'sedoo-theme-labo');  
+$themes = get_the_terms( $post->ID, 'sedoo-theme-labo');  
 $themeSlugRewrite = "sedoo-theme-labo";
 ?>
 
