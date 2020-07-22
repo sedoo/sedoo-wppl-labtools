@@ -3,11 +3,11 @@
  * Plugin Name:     Sedoo Outils Lab
  * Plugin URI:      https://github.com/sedoo/sedoo-wppl-labtools
  * Description:     custom post pour les laboratoires
- * Author:          Pierre VERT - SEDOO DATA CENTER
+ * Author:          Pierre VERT , Nicolas Gruwe - SEDOO DATA CENTER
  * Author URI:      https://www.sedoo.fr 
  * Text Domain:     sedoo-wppl-labtools
  * Domain Path:     /languages
- * Version:         1.0.0
+ * Version:         1.0.1
  * GitHub Plugin URI: sedoo/sedoo-wppl-labtools
  * GitHub Branch:     master
  * @package         Sedoo_Wppl_Labtools
