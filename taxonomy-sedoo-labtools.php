@@ -12,6 +12,7 @@ get_header();
 // recup le slug de la taxonomie du term courant
 $term = get_queried_object();
 $taxonomy = $term->taxonomy;
+$affichage_portfolio = get_field('sedoo_affichage_en_portfolio', $term);
 ?>
 
 <div class="site-branding" 
@@ -40,6 +41,7 @@ $taxonomy = $term->taxonomy;
 		</header><!-- .page-header -->
 		
 		<?php
+	if($affichage_portfolio != true) { // if portfolio then display it, if not just do the normal script
 
         // SHOW POST
         $defaultListPost = array(
@@ -138,7 +140,23 @@ $taxonomy = $term->taxonomy;
         foreach ($whatToShow as $display) {
             sedoo_labtools_get_associate_content_arguments($display['title'], $display['posttype'], $display['taxonomy'], $display['post_number'], $display['post_offset'], $className);
         }
+    } else {
+        ?>
+        <script>
+            ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+        </script>
+        <style>
+            .sedoo_port_action_btn li:hover {
+                background-color: <?php echo $code_color; ?> !important;
+            }
 
+            .sedoo_port_action_btn li.active {
+                background-color: <?php echo $code_color; ?> !important;
+            }
+        </style>
+        <?php 
+        archive_do_portfolio_display($term);
+    }
 		?>
 
 
