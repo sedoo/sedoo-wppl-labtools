@@ -15,8 +15,11 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+$layout="";
+$show_more="";
+$show_more_text="";
 // if( get_field('relatedContentTitle') ):
-    sedoo_labtools_get_associate_content_arguments( get_field('relatedContentTitle'), get_field('relatedContentTypeOfContent'), get_field('relatedContentTaxonomies'), get_field('post_number'), get_field('post_offset'), $className );
+    sedoo_labtools_get_associate_content_arguments( get_field('relatedContentTitle'), get_field('relatedContentTypeOfContent'), get_field('relatedContentTaxonomies'), get_field('post_number'), get_field('post_offset'), $layout, $className, $show_more, $show_more_text );
     
 // endif;
 

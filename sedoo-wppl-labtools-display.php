@@ -258,7 +258,7 @@ function sedoo_labtools_relatedBlock_render_callback( $block ) {
  * 
  */
 if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
-    function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset) {
+    function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset, $layout, $className, $show_more, $show_more_text) {
         
         $parameters = array(
             'sectionTitle'    => $title,

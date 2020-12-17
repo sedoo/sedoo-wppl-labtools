@@ -137,8 +137,11 @@ $affichage_portfolio = get_field('sedoo_affichage_en_portfolio', $term);
 
         //sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset, $className)
         $className="";
+        $layout="";
+        $show_more="";
+        $show_more_text="";
         foreach ($whatToShow as $display) {
-            sedoo_labtools_get_associate_content_arguments($display['title'], $display['posttype'], $display['taxonomy'], $display['post_number'], $display['post_offset'], $className);
+            sedoo_labtools_get_associate_content_arguments($display['title'], $display['posttype'], $display['taxonomy'], $display['post_number'], $display['post_offset'], $layout, $className, $show_more, $show_more_text );
         }
     } else {
         ?>
