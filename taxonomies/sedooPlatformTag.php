@@ -5,7 +5,7 @@
  * for use with 'sedoo-platform'.
  */
 function sedoo_platform_tag_init() {
-	register_taxonomy( 'sedoo-platform-tag', array( 'page', 'sedoo-platform' ), array(
+	register_taxonomy( 'sedoo-platform-tag', array( 'page', 'sedoo-platform' , 'sedoo_instruments'), array(
 		'hierarchical'      => true,
 		'public'            => true,
 		'show_in_nav_menus' => true,

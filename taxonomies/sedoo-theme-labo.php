@@ -5,7 +5,7 @@
  * for use with 'pages', 'post', 'sedoo-platform', 'sedoo-research-team'.
  */
 function sedoo_theme_labo_init() {
-	register_taxonomy( 'sedoo-theme-labo', array( 'page', 'post', 'sedoo-platform', 'sedoo-research-team', 'sedoo-axe', 'sedoo-project', 'sedoo-sno' ), array(
+	register_taxonomy( 'sedoo-theme-labo', array( 'page', 'post', 'sedoo-platform', 'sedoo_instruments', 'sedoo-research-team', 'sedoo-axe', 'sedoo-project', 'sedoo-sno' ), array(
 		'hierarchical'      => true,
 		'public'            => true,
 		'show_in_nav_menus' => true,

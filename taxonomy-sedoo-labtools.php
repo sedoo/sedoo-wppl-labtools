@@ -91,6 +91,14 @@ $affichage_portfolio = get_field('sedoo_affichage_en_portfolio', $term);
             'post_number'   => '-1', 
             'post_offset'   => '0',
         );
+        // SHOW Instruments
+        $defaultListInstruments =  array(
+            'title'         => 'Instruments',
+            'posttype'      => 'sedoo_instruments',
+            'taxonomy'      => $taxonomy,
+            'post_number'   => '-1', 
+            'post_offset'   => '0',
+        );
 
 		switch ($taxonomy) {
 			case 'sedoo-theme-labo':
@@ -100,8 +108,8 @@ $affichage_portfolio = get_field('sedoo_affichage_en_portfolio', $term);
                     '3' => $defaultListProject,
                     '4' => $defaultListSno,
                     '5' => $defaultListAxe,
-                    '6' => $defaultListPlatform,                   
-                    
+                    '6' => $defaultListPlatform,
+                    '7' => $defaultListInstruments,       
                 );
 				break;
             case 'sedoo-axe-tag':
@@ -117,6 +125,7 @@ $affichage_portfolio = get_field('sedoo_affichage_en_portfolio', $term);
                         '2' => $defaultListPlatform,
                         '3' => $defaultListTeam,
                         '4' => $defaultListAxe,
+                        '5' => $defaultListInstruments,
                     );
                 break;
             case 'sedoo-project-tag':
