@@ -5,7 +5,7 @@
  * for use with 'sedoo-axe'.
  */
 function sedoo_axe_tag_init() {
-	register_taxonomy( 'sedoo-axe-tag', array( 'page', 'sedoo-axe', 'sedoo-platform', 'sedoo-research-team' ), array(
+	register_taxonomy( 'sedoo-axe-tag', array( 'page', 'post', 'sedoo-platform', 'sedoo_instruments', 'sedoo-research-team', 'sedoo-axe', 'sedoo-project', 'sedoo-sno' ), array(
 		'hierarchical'      => true,
 		'public'            => true,
 		'show_in_nav_menus' => true,
