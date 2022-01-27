@@ -27,9 +27,9 @@
     
 // }
 function sedoo_labtools_load_plugin_textdomain() {
-    load_plugin_textdomain( 'sedoo-wppl-labtools', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+    load_plugin_textdomain( 'sedoo-wppl-labtools', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
-add_action( 'plugins_loaded', 'sedoo_labtools_load_plugin_textdomain' );
+add_action( 'init', 'sedoo_labtools_load_plugin_textdomain' );
 
 // LOAD CSS & SCRIPTS 
 function sedoo_labtools_scripts() {
