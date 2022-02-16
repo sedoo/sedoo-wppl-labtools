@@ -29,11 +29,13 @@ function sedoo_labtools_show_categories($categories, $slugRewrite) {
                 // if ( "en" == pll_current_language()) {
                 //     echo '<a href="'.site_url().'/'.pll_current_language().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
                 // } else {
-                    if(pll_default_language() == pll_current_language()) {
-                        echo '<a href="'.site_url().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
-                    } else {
+                if (function_exists('pll_default_language')) {
+                    if(pll_default_language() !== pll_current_language()) {
                         echo '<a href="'.site_url().'/'.pll_current_language().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
-                    }
+                    }   
+                } else {
+                    echo '<a href="'.site_url().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+                }
                 // }
                 echo $categorie->name; 
                 ?>                    
