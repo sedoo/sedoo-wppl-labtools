@@ -9,7 +9,6 @@
 
 $titleItem=mb_strimwidth(get_the_title(), 0, 70, '...');  
 $postType=get_post_type();
-echo 'content-sedoo-cpt';
 ?>
 <a class="item-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"> 
     <div class="item-img">
