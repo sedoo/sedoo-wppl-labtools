@@ -10,8 +10,6 @@ $themeSlugRewrite = "sedoo-theme-labo";
 
 <article role="embed-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
-        <?php theme_aeris_show_categories($categories);?>
-        <?php //sedoo_labtools_show_categories($themes, $themeSlugRewrite);?>
         <?php 
         if (get_the_post_thumbnail()) {
         ?>
@@ -41,7 +39,7 @@ $themeSlugRewrite = "sedoo-theme-labo";
 			<?php the_excerpt(); ?>
         </div>
         <?php endif; ?>
-        <?php theme_aeris_meta(); ?>
+        
     </section>
     <!-- <footer>
 	</footer> -->
