@@ -328,7 +328,7 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
                 if (get_post_type()== "post") {
                     get_template_part( 'template-parts/content', get_post_type() );
                 } else {
-                include('template-parts/content-sedoo-cpt.php');
+                    get_template_part('template-parts/content', 'sedoo-cpt');
                 }
             }
             echo '</section>';

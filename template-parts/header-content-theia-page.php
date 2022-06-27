@@ -7,7 +7,7 @@
  *
  * Modification du fichier header-content-page.php du thème parent Aeris
  * 
- * @package aeris
+ * @package Sedoo_Wppl_Labtools
  */
 
 ?>
