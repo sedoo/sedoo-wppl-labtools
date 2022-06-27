@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a title & breadcrumbs on page
  *
- * @package aeris
+ * @package Sedoo_Wppl_Labtools
  */
 
 if (!is_singular(array('post'))){

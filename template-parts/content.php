@@ -13,8 +13,6 @@ $typeProduitsSlugRewrite = "typeofproduct";
 <article role="embed-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
         <?php sedoo_labtools_show_categories($themes, $themeSlugRewrite);?>
-        <?php //theme_aeris_show_categories($categories);?>
-        <?php //sedoo_labtools_show_categories($typeProduits, $typeProduitsSlugRewrite);?>
         <?php 
         if (get_the_post_thumbnail()) {
         ?>
@@ -44,7 +42,7 @@ $typeProduitsSlugRewrite = "typeofproduct";
 			<?php the_excerpt(); ?>
         </div>
         <?php endif; ?>
-        <?php theme_aeris_meta(); ?>
+        
     </section>
     <!-- <footer>
 	</footer> -->
