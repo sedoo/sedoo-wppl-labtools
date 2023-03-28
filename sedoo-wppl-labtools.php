@@ -7,7 +7,7 @@
  * Author URI:      https://www.sedoo.fr 
  * Text Domain:     sedoo-wppl-labtools
  * Domain Path:     /languages
- * Version:         1.4.0
+ * Version:         1.4.1
  * GitHub Plugin URI: sedoo/sedoo-wppl-labtools
  * GitHub Branch:     master
  * @package         Sedoo_Wppl_Labtools
@@ -40,7 +40,7 @@ function sedoo_labtools_scripts() {
 
 // Prepare activation for thumbnail support for CPT
 $thumbnailSupport=array();
-
+var_dump($thumbnailSupport);
 if ( get_field('sedoo-platform', 'option') == 1) { 
     include 'post-types/sedoo-platform.php';
     array_push($thumbnailSupport, 'sedoo-platform');
@@ -86,7 +86,7 @@ function sedoo_wppl_labtools_thumbnail_support() {
     add_theme_support( 'post-thumbnails', $thumbnailSupport );
 }
 
-add_action('after_setup_theme','sedoo_wppl_labtools_thumbnail_support');
+add_action('plugins_loaded','sedoo_wppl_labtools_thumbnail_support');
 
 include 'sedoo-wppl-labtools-display.php';
 include 'inc/sedoo-wppl-labtools-functions.php';
