@@ -45,7 +45,7 @@ if ((get_field( 'table_content' )) && (function_exists('sedoo_wpth_labs_display_
    <main id="main" class="site-main">
       <div class="wrapper-content">
          <?php
-            // sedoo_labtools_show_categories($themes, $themeSlugRewrite);
+            // sedoo_show_categories($themes, $themeSlugRewrite);
             include( get_template_directory() . '/template-parts/content-page.php' );
          ?>
 		</div>
