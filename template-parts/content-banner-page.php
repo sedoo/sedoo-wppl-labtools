@@ -13,7 +13,7 @@ $themeSlugRewrite = "sedoo-theme-labo";
 
 <article id="post-<?php the_ID(); ?>">
     <div class="wrapper-content">
-	<?php sedoo_labtools_show_categories($themes, $themeSlugRewrite);?>
+	<?php sedoo_show_categories($themes, $themeSlugRewrite);?>
 	<?php
 		the_content();
 

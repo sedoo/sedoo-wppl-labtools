@@ -10,7 +10,7 @@ $slugRewrite = "theme";
 
 <article role="embed-post">
     <header>
-    <?php sedoo_labtools_show_categories($themes, $slugRewrite);?>
+    <?php sedoo_show_categories($themes, $slugRewrite);?>
         <div class="tag">
         <?php
         if( $categories ) {

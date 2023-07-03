@@ -13,7 +13,7 @@ $title = mb_strimwidth($title, 0, 50, '...');
 
 <article role="short-embed-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
-    <?php sedoo_labtools_show_categories($themes, $slugRewrite);?>
+    <?php sedoo_show_categories($themes, $slugRewrite);?>
     <?php 
     if (get_the_post_thumbnail()) {
     ?>

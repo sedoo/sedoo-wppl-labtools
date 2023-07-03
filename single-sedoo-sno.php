@@ -52,17 +52,17 @@ if ((get_field( 'table_content' )) && (function_exists('sedoo_wpth_labs_display_
       <div class="wrapper-content">
       <div data-role="list-platformTag">
       <?php 
-         if ( (function_exists('sedoo_labtools_show_categories')) && ($sedooAnotags)){
+         if ( (function_exists('sedoo_show_categories')) && ($sedooAnotags)){
          ?>
          <div data-role="list-platformTag">
-            <?php sedoo_labtools_show_categories($sedooAnotags, $anoTagSlugRewrite);?>
+            <?php sedoo_show_categories($sedooAnotags, $anoTagSlugRewrite);?>
          </div>
          <?php
          }
       ?>
       </div>
       <?php
-         // sedoo_labtools_show_categories($themes, $themeSlugRewrite);
+         // sedoo_show_categories($themes, $themeSlugRewrite);
          include( get_template_directory() . '/template-parts/content-page.php' );
          ?>
 		</div>
