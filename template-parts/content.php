@@ -12,7 +12,7 @@ $typeProduitsSlugRewrite = "typeofproduct";
 
 <article role="embed-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
-        <?php sedoo_labtools_show_categories($themes, $themeSlugRewrite);?>
+        <?php sedoo_show_categories($themes, $themeSlugRewrite);?>
         <?php 
         if (get_the_post_thumbnail()) {
         ?>

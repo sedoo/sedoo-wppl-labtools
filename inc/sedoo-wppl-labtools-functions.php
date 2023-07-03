@@ -13,45 +13,6 @@ add_post_type_support( 'page', 'excerpt' );
  */
 add_theme_support( 'post-thumbnails' );
 
-/******************************************************************
- * Afficher les archives des custom taxonomies
- * $categories = get_the_terms( $post->ID, 'category');  
- */
-
-function sedoo_labtools_show_categories($categories, $slugRewrite) {
- 
-    if( $categories ) {
-    ?>
-    <div class="tag">
-    <?php
-        foreach( $categories as $categorie ) { 
-            if ($categorie->slug !== "non-classe") {
-                // if ( "en" == pll_current_language()) {
-                //     echo '<a href="'.site_url().'/'.pll_current_language().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
-                // } else {
-                if (function_exists('pll_default_language')) {
-                    if(pll_default_language() !== pll_current_language()) {
-                        echo '<a href="'.site_url().'/'.pll_current_language().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
-                    }  else {
-                        echo '<a href="'.site_url().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
-                    } 
-
-                } else {
-                    echo '<a href="'.site_url().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
-                }
-                // }
-                echo $categorie->name; 
-                ?>                    
-            </a>
-    <?php 
-            }
-        }
-    ?>
-    </div>
-  <?php
-      } 
-  }
-
   /* ------------------------------------------------------------------------------------------------- */
 /**
  * AJOUT DES FILTRES DES CUSTOM TAXONOMIES DANS LES LISTES DE POST / CUSTOM POST
